@@ -1,7 +1,7 @@
 * {
   font-family: "mrs-eaves-roman-all-small-ca", serif;
   letter-spacing: 5px;
-  font-size: 0.96em;
+  font-size: 1.05em;
   background-color: #203b4b;
   color: #fff;
 }
@@ -20,6 +20,8 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translatex(-50%) translatey(-50%);
+  width: 100%;
+  text-align: center;
 }
 
 .loader {
@@ -117,7 +119,7 @@ h6 {
 
 @media only screen and (min-width: 400px) {
   * {
-    font-size: 1.04em;
+    font-size: 1.15em;
   }
 }
 
