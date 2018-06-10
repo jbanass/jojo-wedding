@@ -40,3 +40,10 @@ CREATE TABLE `food` (
   CONSTRAINT `fk_par_food` FOREIGN KEY (`par_id`) REFERENCES `party` (`par_id`),
   CONSTRAINT `fk_per_food` FOREIGN KEY (`per_id`) REFERENCES `person` (`per_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `registry` (
+  `reg_id` int(11) NOT NULL COMMENT 'Unique ID for a registry',
+  `reg_url` varchar(255) NOT NULL COMMENT 'URL to registry',
+  `reg_icon` varchar(255) DEFAULT NULL COMMENT 'Icon for registry',
+  PRIMARY KEY (`reg_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
