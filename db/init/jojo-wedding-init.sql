@@ -47,3 +47,18 @@ CREATE TABLE `registry` (
   `reg_icon` varchar(255) DEFAULT NULL COMMENT 'Icon for registry',
   PRIMARY KEY (`reg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `hotel` (
+  `hot_id` int(11) NOT NULL,
+  `hot_name` varchar(255) NOT NULL COMMENT 'Hotel Name',
+  `hot_address_1` varchar(255) NOT NULL COMMENT 'Hotel Address 1',
+  `hot_address_2` varchar(255) NOT NULL COMMENT 'Hotel Address 2',
+  `hot_address_3` varchar(255) NOT NULL COMMENT 'Hotel Address 3',
+  `hot_city` varchar(255) NOT NULL COMMENT 'Hotel City',
+  `hot_state` varchar(50) NOT NULL COMMENT 'Hotel State',
+  `hot_zip` varchar(12) NOT NULL COMMENT 'Hotel Zip Code',
+  `hot_phone` varchar(12) NOT NULL COMMENT 'Hotel Phone Number',
+  `hot_group_code` varchar(50) NOT NULL COMMENT 'Hotel Group Code',
+  `hot_url` varchar(255) NOT NULL COMMENT 'Hotel URL',
+  PRIMARY KEY (`hot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
