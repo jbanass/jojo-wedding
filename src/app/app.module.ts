@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 
 import { HeroModule } from "./hero/hero.module";
 import { BrideGroomModule } from "./bride-groom/bride-groom.module";
+import { OurStoryModule } from './our-story/our-story.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,9 +16,10 @@ import { BrideGroomModule } from "./bride-groom/bride-groom.module";
     FormsModule,
     HttpModule,
     HeroModule,
-    BrideGroomModule
+    BrideGroomModule,
+    OurStoryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
