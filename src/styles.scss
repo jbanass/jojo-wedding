@@ -9,25 +9,48 @@ $background-color: #203b4b;
   src: url("./assets/fonts/WildernessTypeface-Regular.ttf");
 }
 
+/* -------------------------------*/
+/*BASIC SETUP                     */
+/* -------------------------------*/
+
 * {
-  font-family: $font-stack;
-  letter-spacing: $letter-spacing;
-  font-size: $font-size;
-  background-color: $background-color;
-  color: $font-color;
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  font-family: WildernessTypeFace;
+html,
+body {
+  background-color: $background-color;
+  color:$font-color;
+  font-family: $font-stack;
+  font-size: $font-size;
+  text-rendering: optimizeLegibility;
+  overflow-x:hidden;
 }
+
+.clearfix {zoom:1}
+.clearfix:after {
+  content:'.';
+  clear:both;
+  display:block;
+  height:0;
+  visibility: hidden;
+}
+
+/* -------------------------------*/
+/*REUSABLE COMPONENTS             */
+/* -------------------------------*/
+
+.row {
+  max-width:1140px;
+  margin:0 auto; /*centering the row*/
+}
+
+section {
+  padding:0px 0;
+}
+
 
 .loader {
   position: absolute;
