@@ -4,12 +4,19 @@ $font-color: #fff;
 $letter-spacing: 5px;
 $background-color: #203b4b;
 
+@font-face {
+  font-family: WildernessTypeFace;
+  src: url("./assets/fonts/WildernessTypeface-Regular.ttf");
+}
+
 * {
   font-family: $font-stack;
   letter-spacing: $letter-spacing;
   font-size: $font-size;
   background-color: $background-color;
   color: $font-color;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -19,6 +26,7 @@ h4,
 h5,
 h6 {
   font-weight: normal;
+  font-family: WildernessTypeFace;
 }
 
 .loader {

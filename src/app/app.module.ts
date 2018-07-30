@@ -5,9 +5,18 @@ import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 
+import { HeroModule } from "./hero/hero.module";
+import { BrideGroomModule } from "./bride-groom/bride-groom.module";
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, HttpModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    HeroModule,
+    BrideGroomModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
