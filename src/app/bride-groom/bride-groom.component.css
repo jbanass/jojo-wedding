@@ -1,6 +1,7 @@
 .bride-groom-container {
   background-color:#d3d3d3;
-  height:500px;
+  height: auto;
+    padding-bottom: 40px;
 }
 
 .bride-groom-header {
@@ -11,8 +12,10 @@
 }
 
 .square-container {
-   display:inline-block;
-   width:50%;
+  width: 230px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
 }
 
 .couple-description {
