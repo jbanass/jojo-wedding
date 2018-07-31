@@ -1,0 +1,25 @@
+.square-container {
+    width: 230px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color:#000;
+    padding:3px;
+  }
+
+.rsvp-container {
+    background-color:#dedede;
+    text-align: center;
+    height:auto;
+    padding-bottom:40px;
+}
+
+.rsvp-info {
+    position: relative;
+    top:-20px;
+
+}
+
+.rsvp-header {
+
+}

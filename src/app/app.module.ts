@@ -12,6 +12,7 @@ import { BridalPartyModule } from './bridal-party/bridal-party.module';
 import { FestivitiesModule } from './festivities/festivities.module';
 import { HotelModule } from './hotel/hotel.module';
 import { RegistryModule } from './registry/registry.module';
+import { RSVPModule } from './rsvp/rsvp.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import { RegistryModule } from './registry/registry.module';
     BridalPartyModule,
     FestivitiesModule,
     HotelModule,
-    RegistryModule
+    RegistryModule,
+    RSVPModule
   ],
   providers: [],
   bootstrap: [AppComponent]
