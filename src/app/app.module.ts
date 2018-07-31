@@ -14,6 +14,7 @@ import { HotelModule } from './hotel/hotel.module';
 import { RegistryModule } from './registry/registry.module';
 import { RSVPModule } from './rsvp/rsvp.module';
 import { FooterModule } from './footer/footer.module';
+import { NavModule } from './nav/nav.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { FooterModule } from './footer/footer.module';
     HotelModule,
     RegistryModule,
     RSVPModule,
-    FooterModule
+    FooterModule,
+    NavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
