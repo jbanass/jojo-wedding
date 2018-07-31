@@ -1,0 +1,42 @@
+.square-container {
+    width: 230px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color:#000;
+    margin:5px;
+  }
+
+.hotel-container {
+    background-color:#d3d3d3;
+    height: auto;
+      padding-bottom: 40px;
+      text-align: center;
+}
+
+.hotel-header-container {
+
+}
+
+.hotel-header {
+    text-align: center;
+    padding: 50px 0px;
+    font-size: 1.3em;
+    width: 100vw;
+}
+
+.hotel-description-container {
+
+}
+
+.hotel-description {
+
+}
+
+.hotel-info-container {
+    padding:5px;
+}
+
+.hotel-info {
+
+}

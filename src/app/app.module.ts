@@ -10,6 +10,7 @@ import { BrideGroomModule } from "./bride-groom/bride-groom.module";
 import { OurStoryModule } from './our-story/our-story.module';
 import { BridalPartyModule } from './bridal-party/bridal-party.module';
 import { FestivitiesModule } from './festivities/festivities.module';
+import { HotelModule } from './hotel/hotel.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { FestivitiesModule } from './festivities/festivities.module';
     BrideGroomModule,
     OurStoryModule,
     BridalPartyModule,
-    FestivitiesModule
+    FestivitiesModule,
+    HotelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
