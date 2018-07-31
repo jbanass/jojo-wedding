@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 import { HeroModule } from "./hero/hero.module";
 import { BrideGroomModule } from "./bride-groom/bride-groom.module";
 import { OurStoryModule } from './our-story/our-story.module';
+import { BridalPartyModule } from './bridal-party/bridal-party.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,8 @@ import { OurStoryModule } from './our-story/our-story.module';
     HttpModule,
     HeroModule,
     BrideGroomModule,
-    OurStoryModule
+    OurStoryModule,
+    BridalPartyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
