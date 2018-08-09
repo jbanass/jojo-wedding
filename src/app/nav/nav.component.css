@@ -1,14 +1,28 @@
 .mobile-nav {
-    position:fixed;
-    top:20px;
-    right:20px;
-    font-size:1.5em;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  z-index: 2;
 }
 
 .mobile-nav-menu {
-    position:fixed;
-    top:40px;
-    right:0px;
-    font-size:1.5em;
-    background-color:#000;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  font-size: 1.5em;
+  background-color: #3d3d3d;
+  height: 100%;
+  z-index: 1;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mobile-menu div {
+  padding: 10px;
 }
