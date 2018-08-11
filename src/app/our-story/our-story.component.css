@@ -1,26 +1,23 @@
 .our-story-container {
-    height:360px;
+  height: 360px;
 }
 
 .our-story-header {
-    text-align: center;
-    padding: 50px 0px;
-    font-size: 1.3em;
-    width: 100vw;
+  text-align: center;
+  padding: 50px 0px;
+  width: 100vw;
 }
 
 .our-story {
-    text-align:center;
+  text-align: center;
 }
 
 .our-story-subsection-header {
-    padding-bottom:20px;
+  padding-bottom: 20px;
 }
 
 .our-story-subsection-date {
-
 }
 
 .our-story-subsection-description {
-
 }
