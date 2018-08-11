@@ -17,6 +17,9 @@
   transform: translate(-50%, 0);
 }
 
+.couple-container {
+}
+
 .couple-description {
   background-color: #3d3d3d;
   height: auto;
@@ -40,6 +43,7 @@
 }
 
 .couple-description ul li {
+  font-size: 0.6em;
 }
 
 .couple-description-right {
@@ -55,4 +59,23 @@
 .couple-picture-right {
   position: relative;
   top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .square-container {
+  }
+
+  .couple-container {
+    margin: 0 auto;
+    width: 700px;
+  }
+
+  .bride-container {
+    display: inline-flex;
+    flex-direction: row-reverse;
+  }
+
+  .groom-container {
+    display: inline-flex;
+  }
 }

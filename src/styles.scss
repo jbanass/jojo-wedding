@@ -160,20 +160,8 @@ section {
   }
 }
 
-@media only screen and (min-width: 400px) {
-  * {
-    font-size: 1.15em;
-  }
-}
-
-@media only screen and (min-width: 720px) {
-  * {
-    font-size: 1.22em;
-  }
-}
-
-@media only screen and (min-width: 1400px) {
-  * {
-    font-size: 1.35em;
+@media screen and (min-width: 768px) {
+  .section-header {
+    font-size: 5.5em;
   }
 }

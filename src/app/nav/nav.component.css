@@ -27,55 +27,54 @@
 
 .mobile-menu-option {
   padding: 10px;
-  margin:5px;
+  margin: 5px;
 }
 
 .nav-container {
-    display:none;
-    width:100%;
-    height:80px;
-    background-color: #8d8d8d;
-    text-align: center;
+  display: none;
+  width: 100%;
+  height: 80px;
+  background-color: #8d8d8d;
+  text-align: center;
 }
 
 .nav-menu {
-    display:-webkit-inline-box;
-    width:100%;
-    height:100%;
+  display: -webkit-inline-box;
+  width: 100%;
+  height: 100%;
 }
 
 .nav-menu-option {
-    font-size:.4em;
-    display:inline-block;
-    margin:17px;
+  font-size: 0.6em;
+  display: inline-block;
+  margin: 17px;
 }
 
 .nav-menu-jordan-joseph {
-    font-family: WildernessTypeFace;
-    font-size: 0.7em;
-    margin:17px 30px 17px 60px;
+  font-family: WildernessTypeFace;
+  font-size: 1.5em;
+  margin: 17px 30px 17px 60px;
 }
 
 .nav-menu-rsvp {
-    border: 1px solid #fff;
-    padding:10px 40px;
-    color:#fff;
+  border: 1px solid #fff;
+  padding: 10px 40px;
+  color: #fff;
 }
 
 .mobile-nav-menu-rsvp {
-    border: 1px solid #fff;
-    padding:10px 80px;
-    color:#fff;
-    display:inline-block;
+  border: 1px solid #fff;
+  padding: 10px 80px;
+  color: #fff;
+  display: inline-block;
 }
 
-@media only screen and (min-width:1024px) {
-    .mobile-nav {
-        display:none;
-    }
+@media only screen and (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
 
-    .nav-container {
-        display:inline-block;
-
-    }
+  .nav-container {
+    display: inline-block;
+  }
 }
