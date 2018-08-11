@@ -35,3 +35,11 @@
 
 .hotel-info {
 }
+
+@media screen and (min-width: 768px) {
+  .square-container {
+    display: inline-block;
+    left: 0;
+    transform: none;
+  }
+}
