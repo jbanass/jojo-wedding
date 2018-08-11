@@ -49,3 +49,23 @@
 .groomsmen-list {
   text-align: center;
 }
+
+@media screen and (min-width: 768px) {
+  .bridesmaids-list-container {
+    width: 700px;
+  }
+
+  .bridesmaid-container {
+    width: 33%;
+    display: inline-block;
+  }
+
+  .groomsmen-list-container {
+    width: 700px;
+  }
+
+  .groomsmen-container {
+    width: 33%;
+    display: inline-block;
+  }
+}
