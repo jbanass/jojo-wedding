@@ -1,8 +1,10 @@
+@import "variables";
+
 $font-stack: "mrs-eaves-roman-all-small-ca", serif;
 $font-size: 1.05em;
-$font-color: #fff;
 $letter-spacing: 5px;
-$background-color: #203b4b;
+
+$font-color: $off-white;
 
 @font-face {
   font-family: WildernessTypeFace;
@@ -21,7 +23,7 @@ $background-color: #203b4b;
 
 html,
 body {
-  background-color: $background-color;
+  background-color: $main-blue;
   color: $font-color;
   font-family: $font-stack;
   font-size: $font-size;

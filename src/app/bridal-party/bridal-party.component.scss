@@ -1,14 +1,15 @@
+@import "../../variables";
+
 .square-container {
   width: 230px;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: #d3d3d3;
   padding: 3px;
 }
 
 .bridal-party-container {
-  background-color: #c74141;
+  background-color: $main-blue;
   height: auto;
   padding-bottom: 40px;
 }
@@ -20,6 +21,7 @@
   text-align: center;
   padding: 50px 0px;
   width: 100vw;
+  color:$light-blue;
 }
 
 .bridesmaids-list-container {

@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
     selector: 'hero',
     templateUrl: './hero.component.html',
     styleUrls: [
-        './hero.component.css'
+        './hero.component.scss'
     ]
 })
 export class HeroComponent {
-    
+
 }

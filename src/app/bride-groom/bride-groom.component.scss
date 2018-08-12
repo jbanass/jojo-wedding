@@ -1,5 +1,7 @@
+@import "../../variables";
+
 .bride-groom-container {
-  background-color: #d3d3d3;
+  background-color: $main-blue;
   height: auto;
   padding-bottom: 40px;
 }
@@ -8,6 +10,7 @@
   text-align: center;
   padding: 50px 3px;
   width: 100vw;
+  color:$light-blue;
 }
 
 .square-container {
@@ -21,17 +24,19 @@
 }
 
 .couple-description {
-  background-color: #3d3d3d;
+  background-color: $main-red;
   height: auto;
   padding: 10px 30px 20px 30px;
 }
 
 .couple-description h2 {
+  color: $light-red;
 }
 
 .couple-description hr {
   width: 50px;
   margin: 20px 0px;
+  border-color: $light-red;
 }
 
 .couple-description p {
@@ -52,7 +57,7 @@
 }
 
 .couple-picture {
-  background-color: #823232;
+  background-color: gray;
   height: 150px;
 }
 
@@ -75,17 +80,11 @@
     flex-direction: row-reverse;
   }
 
-  .bride-container .square-container.couple-picture {
-    top:80px;
-    height:190px;
+  .couple-picture {
+    height:auto;
   }
 
   .groom-container {
     display: inline-flex;
-  }
-
-  
-  .groom-container .square-container.couple-picture {
-    height:190px;
   }
 }

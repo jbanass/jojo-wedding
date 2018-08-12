@@ -1,9 +1,11 @@
+@import "../../variables";
+
 .square-container {
     width: 230px;
     position: relative;
     left: 50%;
     transform: translate(-50%,0);
-    background-color:#000;
+    background-color:$main-red;
     padding:3px;
   }
 
@@ -21,5 +23,5 @@
 }
 
 .rsvp-header {
-
+    color: $light-red;
 }

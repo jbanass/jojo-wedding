@@ -1,9 +1,11 @@
+@import "../../variables";
+
 .square-container {
   width: 230px;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: #d3d3d3;
+  background-color: $main-red;
   padding: 3px;
   text-align: center;
 }
@@ -16,6 +18,7 @@
 .festivities-header {
   text-align: center;
   padding: 50px 0px;
+  color:$light-red;
 }
 
 .festivities-background {
