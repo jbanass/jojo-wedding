@@ -30,6 +30,12 @@
   margin: 5px;
 }
 
+.nav-wrapper {
+    display:none;
+    height:80px;
+    width:100%;
+}
+
 .nav-container {
   display: none;
   width: 100%;
@@ -82,7 +88,17 @@
     display: none;
   }
 
+  .nav-wrapper {
+      display:inline-block;
+  }
+
   .nav-container {
     display: inline-block;
+  }
+
+  .nav-container-fixed {
+      position:fixed;
+      top:0;
+      z-index:100;
   }
 }

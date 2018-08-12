@@ -10,6 +10,26 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/sxv5jgp.css">
   <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <script>
+    var tid = setInterval(function () {
+      if (document.readyState !== 'complete') return;
+      clearInterval(tid);
+
+      var element = document.getElementById("nav_bar");
+
+      console.log(element);
+
+      offset = element.offsetTop - 1;
+
+      window.addEventListener("scroll", function () {
+        if (offset < window.pageYOffset) {
+          element.classList.add("nav-container-fixed");
+        } else {
+          element.classList.remove("nav-container-fixed");
+        }
+      }, false);
+    }, 100);
+  </script>
 </head>
 
 <body>
