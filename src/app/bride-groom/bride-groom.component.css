@@ -75,7 +75,17 @@
     flex-direction: row-reverse;
   }
 
+  .bride-container .square-container.couple-picture {
+    top:80px;
+    height:190px;
+  }
+
   .groom-container {
     display: inline-flex;
+  }
+
+  
+  .groom-container .square-container.couple-picture {
+    height:190px;
   }
 }

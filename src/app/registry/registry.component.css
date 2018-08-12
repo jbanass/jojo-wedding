@@ -15,6 +15,17 @@
   text-align: center;
 }
 
+.registry-image-container {
+  display:none;
+}
+
+.registry-image-1, .registry-image-2 {
+  height:200px;
+  width:200px;
+  border: 1px solid #fff;
+  background-color:gray;
+}
+
 .registry-header-container {
 }
 
@@ -32,4 +43,37 @@
 
 .registry-options-container {
   padding-top: 10px;
+}
+
+@media screen and (min-width:768px) {
+  .registry-container {
+    height:450px;
+  }
+
+  .registry-image-container {
+    display: -webkit-inline-box;
+    position: relative;
+    left: -330px;
+    top: 150px;
+  }
+
+  .container {
+
+  }
+
+  .pull-right {
+    position: relative;
+    left: 150px;
+  }
+
+  .registry-image-1 {
+    position: absolute;
+    top: -50px;
+  }
+
+  .registry-image-2 {
+    position: absolute;
+    left: 50px;
+  }
+
 }
