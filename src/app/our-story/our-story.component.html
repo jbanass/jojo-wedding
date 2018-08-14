@@ -1,14 +1,24 @@
 <div class="section our-story-container">
-    <div class="our-story-header-container">
+    <div #ourstory class="our-story-header-container">
         <h1 class="section-header our-story-header">Our Story</h1>
     </div>
-    <div class="our-story">
-        <div class="our-story-subsection-header">
-            <h2>Title</h2>
-            <h2 class="our-story-subsection-date">Date</h2>
+    <div class="our-story" [ngSwitch]="storyIndex">
+        <div *ngFor="let story of stories; let i = index">
+            <div *ngSwitchCase="i">
+                <div class="our-story-subsection-header">
+                    <h2>{{story.title}}</h2>
+                    <h2 class="our-story-subsection-date">- {{story.date}} -</h2>
+                </div>
+                <div class="our-story-subsection-description" *ngFor="let description of story.descriptions">
+                    <p>{{description}}</p>
+                    <br />
+                </div>
+            </div>
         </div>
-        <div class="our-story-subsection-description">
-            <p>Description</p>
+    </div>
+    <div>
+        <div *ngFor="let story of stories; let i = index">
+            <button (click)="setIndex(i)">Story {{i}}</button>
         </div>
     </div>
 </div>
