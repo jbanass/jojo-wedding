@@ -1,12 +1,10 @@
 <div class="rsvp-container">
     <div class="square-container rsvp-info">
         <h1 class="section-header rsvp-header">RSVP</h1>
-        <form>
-            <input placeholder="Enter code from invitation" />
-            <button>Submit</button>
-            <p>
-                <i>Respond by October 17th, 2018</i>
-            </p>
-        </form>
+        <input type="text" [formControl]="code" placeholder="Enter code from invitation" />
+        <button (click)="submit()">Submit</button>
+        <p>
+            <i>Respond by October 17th, 2018</i>
+        </p>
     </div>
 </div>
