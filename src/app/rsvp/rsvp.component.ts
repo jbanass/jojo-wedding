@@ -16,12 +16,11 @@ export class RSVPComponent {
   submit() {
     var code: string = this.code.value;
 
-    this.service
-      .submitRSVP(code)
-      .subscribe(
-        (result: string) => console.log(result),
-        error => console.error(error)
-      )
-      .unsubscribe();
+    this.service.submitRSVP(code).subscribe(
+      (result: string) => console.log(result),
+      error => {
+        alert("Sorry, that is an invalid invite code.");
+      }
+    );
   }
 }

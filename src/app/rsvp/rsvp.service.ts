@@ -9,6 +9,6 @@ export class RSVPService {
   submitRSVP(code: string) {
     var params: HttpParams = new HttpParams().append("code", code);
 
-    return this.http.get("rsvp", { params: params });
+    return this.http.get("rsvp.php", { params: params, responseType: "text" });
   }
 }
