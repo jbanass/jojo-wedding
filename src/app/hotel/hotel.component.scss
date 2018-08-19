@@ -46,11 +46,11 @@
 }
 
 .reserve-button {
-  padding: 20px;
-    display: inline-block;
-    border: 4px double $off-white;
-    margin: 20px;
-    width: 150px;
+  padding: 15px 0px;
+  display: inline-block;
+  border: 4px double #eae9e4;
+  margin: 20px;
+  width: 170px;
 }
 
 @media screen and (min-width: 768px) {
@@ -58,5 +58,13 @@
     display: inline-block;
     left: 0;
     transform: none;
+  }
+
+  .half-hr {
+    display: inline-block;
+    width: 2px;
+    height: 150px;
+    position: relative;
+    top: 35px;
   }
 }

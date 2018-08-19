@@ -13,7 +13,7 @@
 
 .half-hr {
   width:50%;
-  margin: 0 auto;
+  margin: 20px auto;
   border-color:$light-red;
 }
 
@@ -58,8 +58,8 @@
 
   .square-container {
     width: 480px;
-    height: 480px;
-    margin: 20px;
+    height: 410px;
+    margin: 60px 30px 0px -130px;
     position: inherit;
     -webkit-transform: none;
     transform: none;
