@@ -25,6 +25,26 @@
 
 }
 
+.rsvp-input {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.rsvp-submit {
+    padding: 20px;
+    display: inline-block;
+    border: 4px double $off-white;
+    margin: 20px;
+    width: 150px;
+}
+
+.rsvp-respond-by {
+    color: $light-red;
+    font-size:90%;
+    padding:8px;
+}
+
 .rsvp-header {
     color: $light-red;
 }

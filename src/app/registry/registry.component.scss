@@ -5,7 +5,6 @@
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: #d3d3d3;
   padding: 3px;
   margin: 5px;
 }
@@ -29,6 +28,27 @@
 }
 
 .registry-header-container {
+}
+
+.half-hr {
+  width: 50%;
+    margin: 0 auto 15px auto;
+}
+
+.target {
+  background-image: url("/assets/images/target-logo.png");
+  background-size:contain;
+  height:80px;
+  width:200px;
+  background-repeat: no-repeat;
+}
+
+.bbb {
+  background-image: url("/assets/images/bed-bath-logo.png");
+  background-size:contain;
+  height:80px;
+  width:200px;
+  background-repeat: no-repeat;
 }
 
 .registry-header {
