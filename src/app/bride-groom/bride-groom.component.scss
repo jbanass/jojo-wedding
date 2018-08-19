@@ -65,11 +65,13 @@
 }
 
 .bride-container .square-container.couple-picture {
-  background-image: url("/assets/images/jordan-toddler.jpg");
+  background: url("/assets/images/jordan-toddler.jpg")  no-repeat center top;
+  background-size:100%;
 }
 
 .groom-container .square-container.couple-picture {
-  background-image: url("/assets/images/joe-toddler.jpg");
+  background: url("/assets/images/joe-toddler.jpg") no-repeat center top;
+  background-size:100%;
 }
 
 .couple-picture-right {
@@ -79,16 +81,23 @@
 
 @media screen and (min-width: 768px) {
   .square-container {
+    position:initial;
+    left: initial;
+    transform: none;
+    text-align: left;
+    width:50%;
   }
 
   .couple-container {
     margin: 0 auto;
-    width: 600px;
+    width: 50vw;
+    text-align: center;
   }
 
   .bride-container {
     display: inline-flex;
     flex-direction: row-reverse;
+    width:100%;
   }
 
   .couple-picture {
@@ -100,5 +109,17 @@
     display: inline-flex;
     top: -5px;
     position: relative;
+    width:100%;
+  }
+
+
+
+  .bride-container .square-container.couple-picture {
+    height:200px;
+    top: 25px;
+  }
+
+  .groom-container .square-container.couple-picture {
+    height:180px;
   }
 }
