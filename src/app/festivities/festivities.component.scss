@@ -8,6 +8,12 @@
   background-color: $main-red;
   padding: 3px;
   text-align: center;
+  top: -65px;
+}
+
+.half-hr {
+  width:50%;
+  margin: 0 auto;
 }
 
 .festivities-container {
@@ -17,20 +23,49 @@
 
 .festivities-header {
   text-align: center;
-  padding: 50px 0px;
+  padding: 20px 0px;
   color:$light-red;
 }
 
 .festivities-background {
   height: 200px;
   background-color: #d3d3d3;
+  background-image: url("/assets/images/festivities-background.jpg");
+  background-size:cover;
   margin-bottom: 20px;
+}
+
+.festivities-square-container {
+
 }
 
 @media screen and (min-width: 768px) {
   .festivities-container {
     background-color: #3d3d3d;
     padding: 40px;
+    background-image: url("/assets/images/festivities-background.jpg");
+    background-size:cover;
+    height:600px;
+    text-align: -webkit-center;
+  }
+
+  .festivities-square-container {
+    position: relative;
+    left: -340px;
+    max-width: fit-content;
+  }
+
+  .square-container {
+    width: 480px;
+    height: 480px;
+    margin: 20px;
+    position: inherit;
+    -webkit-transform: none;
+    transform: none;
+    background-color: #3a1b23;
+    padding: 3px;
+    text-align: center;
+    top: 0;
   }
 
   .festivities-background {
@@ -41,9 +76,16 @@
     padding: 0;
   }
 
-  .square-container {
-    left: 0;
-    transform: none;
-    margin-left: 45px;
+  
+
+}
+
+@media screen and (min-width: 1320px) {
+  .festivities-container {
+    background-color: #3d3d3d;
+    padding: 40px;
+    background-image: url("/assets/images/festivities-background.jpg");
+    background-size:cover;
+    background-attachment: fixed;
   }
 }

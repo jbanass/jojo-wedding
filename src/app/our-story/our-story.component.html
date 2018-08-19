@@ -16,9 +16,9 @@
             </div>
         </div>
     </div>
-    <div>
-        <div *ngFor="let story of stories; let i = index">
-            <button (click)="setIndex(i)">Story {{i}}</button>
+    <div class="button-container">
+        <div class="story-button-container" *ngFor="let story of stories; let i = index">
+            <span class="story-button" [class.story-button-selected]="storyIndex === i" (click)="setIndex(i)"></span>
         </div>
     </div>
 </div>

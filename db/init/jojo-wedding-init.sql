@@ -1,17 +1,17 @@
-CREATE TABLE `food` (
+CREATE TABLE `jojowedding`.`food` (
   `food_id` int(11) NOT NULL,
   `food_name` varchar(100) NOT NULL,
   `food_description` varchar(255) NOT NULL,
   PRIMARY KEY (`food_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `rsvp` (
+CREATE TABLE `jojowedding`.`rsvp` (
   `rsvp_id` int(11) NOT NULL,
   `song_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`rsvp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `hotel` (
+CREATE TABLE `jojowedding`.`hotel` (
   `hot_id` int(11) NOT NULL,
   `hot_name` varchar(255) NOT NULL COMMENT 'Hotel Name',
   `hot_address_1` varchar(255) NOT NULL COMMENT 'Hotel Address 1',
@@ -24,25 +24,25 @@ CREATE TABLE `hotel` (
   `hot_group_code` varchar(50) NOT NULL COMMENT 'Hotel Group Code',
   `hot_url` varchar(255) NOT NULL COMMENT 'Hotel URL',
   PRIMARY KEY (`hot_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `registry` (
+CREATE TABLE `jojowedding`.`registry` (
   `reg_id` int(11) NOT NULL COMMENT 'Unique ID for a registry',
   `reg_url` varchar(255) NOT NULL COMMENT 'URL to registry',
   `reg_icon` varchar(255) DEFAULT NULL COMMENT 'Icon for registry',
   PRIMARY KEY (`reg_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE `setting` (
+CREATE TABLE `jojowedding`.`setting` (
   `setting` varchar(10) NOT NULL,
   `value` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`setting`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE `person` (
+CREATE TABLE `jojowedding`.`person` (
   `per_id` int(11) NOT NULL COMMENT 'primary key for locating a Person',
   `per_first` varchar(50) NOT NULL COMMENT 'The first name of a Person',
   `per_last` varchar(50) NOT NULL COMMENT 'The last name of a Person',
@@ -56,4 +56,4 @@ CREATE TABLE `person` (
   KEY `fk_per_rsvp_idx` (`rsvp_id`),
   CONSTRAINT `fk_per_food` FOREIGN KEY (`food_id`) REFERENCES `food` (`food_id`),
   CONSTRAINT `fk_per_rsvp` FOREIGN KEY (`rsvp_id`) REFERENCES `rsvp` (`rsvp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

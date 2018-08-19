@@ -7,10 +7,13 @@
     transform: translate(-50%,0);
     background-color:$main-red;
     padding:3px;
+    text-align: center;
   }
 
 .rsvp-container {
-    background-color:#dedede;
+    background-image: url(/assets/images/rsvp-background.jpg);
+        background-attachment: fixed;
+        background-size: cover;
     text-align: center;
     height:auto;
     padding-bottom:40px;
@@ -24,4 +27,22 @@
 
 .rsvp-header {
     color: $light-red;
+}
+
+@media screen and (min-width:768px) {
+    .rsvp-container {
+        height: 290px;
+        background-position-x: -40px;
+    }
+
+    .square-container {
+        width:370px;
+    }
+
+    .rsvp-info {
+        position: relative;
+        top: -60px;
+        margin-left: -150px;
+        height: 310px;
+    }
 }

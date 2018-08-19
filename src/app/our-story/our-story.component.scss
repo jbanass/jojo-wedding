@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .our-story-container {
   height: auto;
   background-color:gray;
@@ -11,7 +13,41 @@
 
 .our-story {
   text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
+
+.button-container {
+  display: inline-flex;
+    position: relative;
+    margin: 30px 0px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.story-button-container {
+  padding: 0px 5px;
+}
+
+.story-button {
+  height: 25px;
+  width: 25px;
+  border: 1px solid $off-white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all .3s ease-in-out;
+}
+
+.story-button:hover, .story-button:active {
+  background-color: $light-red;
+}
+
+.story-button-selected {
+  background-color: $main-red !important;
+  border: none;
+}
+
+
 
 .our-story-subsection-header {
   padding-bottom: 20px;
