@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Hotel, HotelService } from './hotel.service';
 
 @Component({
     selector: 'hotel',
     templateUrl: './hotel.component.html',
     styleUrls: ['./hotel.component.scss']
 })
-export class HotelComponent {
+export class HotelComponent implements OnInit {
+    private hotel: Hotel
 
+    constructor(private service: HotelService) {
+
+    }
+
+    ngOnInit() {
+        this.service.getHotelInformation().subscribe((hotel: Hotel) => {
+            this.hotel = hotel;
+        });
+    }
 }

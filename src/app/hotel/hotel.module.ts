@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HotelComponent } from './hotel.component';
 
+import { HotelService } from './hotel.service';
+
 @NgModule({
     imports: [
-
+        HttpClientModule
     ],
     declarations: [
         HotelComponent
@@ -13,7 +16,7 @@ import { HotelComponent } from './hotel.component';
         HotelComponent
     ],
     providers: [
-
+        HotelService
     ]
 })
 export class HotelModule {

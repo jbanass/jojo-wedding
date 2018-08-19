@@ -24,24 +24,24 @@
                         Hotel
                     </p>
                     <p>
-                        <i>Wingate by Wyndham</i>
+                        <i>{{hotel?.hot_name}}</i>
                     </p>
                     <br />
-                    <p>18421 North Creek Drive</p>
-                    <p>Tinley Park, Illinois 60477</p>
+                    <p>{{hotel?.hot_address_1}}</p>
+                    <p>{{hotel?.hot_city}} {{hotel?.hot_state}} {{hotel?.hot_zip}}</p>
                 </div>
                 <hr class="half-hr" />
                 <div class="square-container">
                     <p>Book</p>
                     <i>Online</i>
-                    <a class="reserve-button">Reserve Room</a>
+                    <a href="{{hotel?.hot_url}}" target="_blank" class="reserve-button">Reserve Room</a>
                 </div>
                 <hr class="half-hr" />
                 <div class="square-container">
                     <p>Book by</p>
                     <p>Phone</p>
                     <br />
-                    <p>708-532-9300</p>
+                    <p>{{hotel?.hot_phone}}</p>
                     <p>Donnellan/Banass Wedding</p>
                 </div>
             </div>
