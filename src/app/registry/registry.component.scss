@@ -84,6 +84,14 @@
 
   }
 
+  .half-hr {
+      display: inline-block;
+      width: 2px;
+      height: 150px;
+      position: relative;
+      top: 35px;
+  }
+
   .pull-right {
     position: relative;
     left: 150px;
