@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'nav',
@@ -10,5 +10,12 @@ export class NavComponent {
 
     toggleNavDrawer() {
         this.isClosed = !this.isClosed;
+    }
+
+    scrollTo(id: string) {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+        if (!this.isClosed) {
+            this.toggleNavDrawer();
+        }
     }
 }

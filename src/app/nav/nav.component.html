@@ -4,25 +4,25 @@
     </div>
     <div [hidden]="isClosed" class="mobile-nav-menu">
         <div class="mobile-menu">
-            <div class="mobile-menu-option">Our Story</div>
-            <div class="mobile-menu-option">Bridal Party</div>
-            <div class="mobile-menu-option">Festivities</div>
-            <div class="mobile-menu-option">Accomodations</div>
-            <div class="mobile-menu-option">Registry</div>
-            <div class="mobile-menu-option mobile-nav-menu-rsvp">RSVP</div>
+            <div class="mobile-menu-option" (click)="scrollTo('our-story')">Our Story</div>
+            <div class="mobile-menu-option" (click)="scrollTo('bridal-party')">Bridal Party</div>
+            <div class="mobile-menu-option" (click)="scrollTo('festivities')">Festivities</div>
+            <div class="mobile-menu-option" (click)="scrollTo('hotel')">Accomodations</div>
+            <div class="mobile-menu-option" (click)="scrollTo('registry')">Registry</div>
+            <div class="mobile-menu-option mobile-nav-menu-rsvp" (click)="scrollTo('rsvp')">RSVP</div>
         </div>
     </div>
 </div>
 <div id="nav-wrapper" class="nav-wrapper">
     <div id="nav_bar" class="nav-container">
         <div class="nav-menu">
-            <div class="nav-menu-jordan-joseph">Jordan &amp; Joseph</div>
-            <div class="nav-menu-option">Our Story</div>
-            <div class="nav-menu-option">Bridal Party</div>
-            <div class="nav-menu-option">Festivities</div>
-            <div class="nav-menu-option">Accomodations</div>
-            <div class="nav-menu-option">Registry</div>
-            <div class="nav-menu-rsvp">RSVP</div>
+            <div class="nav-menu-jordan-joseph" (click)="scrollTo('our-story')">Jordan &amp; Joseph</div>
+            <div class="nav-menu-option" (click)="scrollTo('our-story')">Our Story</div>
+            <div class="nav-menu-option" (click)="scrollTo('bridal-party')">Bridal Party</div>
+            <div class="nav-menu-option" (click)="scrollTo('festivities')">Festivities</div>
+            <div class="nav-menu-option" (click)="scrollTo('hotel')">Accomodations</div>
+            <div class="nav-menu-option" (click)="scrollTo('registry')">Registry</div>
+            <div class="nav-menu-rsvp" (click)="scrollTo('rsvp')">RSVP</div>
         </div>
     </div>
 </div>
