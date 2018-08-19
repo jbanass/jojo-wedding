@@ -33,6 +33,8 @@
 .half-hr {
   width: 50%;
     margin: 0 auto 15px auto;
+    height: 1px;
+    border: 1px solid $light-blue;
 }
 
 .target {
@@ -69,8 +71,21 @@
 }
 
 @media screen and (min-width:768px) {
+  .square-container {
+    width: 230px;
+    position: initial;
+    left: 0;
+    transform: none;
+    padding: 3px;
+    margin: 5px;
+  }
+
   .registry-container {
-    height:450px;
+    height:500px;
+  }
+
+  .registry-options-container {
+    display:inline-flex;
   }
 
   .registry-image-container {
@@ -85,16 +100,16 @@
   }
 
   .half-hr {
-      display: inline-block;
-      width: 2px;
-      height: 150px;
-      position: relative;
-      top: 35px;
+    display: inline-block;
+    width: 2px;
+    border: 1px solid $light-blue;
+    height: 100px;
+    margin-right: 25px;
   }
 
   .pull-right {
     position: relative;
-    left: 150px;
+    left: 250px;
   }
 
   .registry-image-1 {
