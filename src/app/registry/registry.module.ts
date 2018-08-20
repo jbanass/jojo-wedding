@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RegistryComponent } from './registry.component';
+import { RegistryService } from './registry.service';
 
 @NgModule({
     imports: [
-
+        HttpClientModule
     ],
     declarations: [
         RegistryComponent
@@ -13,7 +15,7 @@ import { RegistryComponent } from './registry.component';
         RegistryComponent
     ],
     providers: [
-
+        RegistryService
     ]
 })
 export class RegistryModule {

@@ -10,7 +10,7 @@ export class HotelService {
     }
 
     getHotelInformation(): Observable<Hotel> {
-        return this.http.get<Hotel>("hotel.php");
+        return this.http.get<Hotel>("hotel.php", { responseType: "json" });
     }
 }
 

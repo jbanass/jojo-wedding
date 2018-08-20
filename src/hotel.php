@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "user";
     $password = "pass";
-    $database = "test";
+    $database = "jojowedding";
 
     $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -12,7 +12,7 @@
 
     $post_data = array();
 
-    if ($result = $conn->query("SELECT * FROM hotel")) {
+    if ($result = $conn->query("SELECT * FROM `hotel`")) {
             while ($row = $result->fetch_assoc()) {
                 $post_data['hot_id'] = $row['hot_id'];
                 $post_data['hot_name'] = $row['hot_name'];
@@ -29,9 +29,8 @@
             $result->close();
             $conn->close();
 
-            echo json_encode($post_data, JSON_FORCE_OBJECT);
-        }
-    } else {
+            echo json_encode($post_data);
+        } else {
         http_response_code(400);
     }
 ?>
