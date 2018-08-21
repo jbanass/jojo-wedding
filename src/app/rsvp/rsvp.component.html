@@ -1,8 +1,7 @@
 <div class="rsvp-container">
     <div class="square-container rsvp-info">
         <h1 class="section-header rsvp-header">RSVP</h1>
-        <input class="rsvp-input" type="text" [formControl]="code" placeholder="Enter code from invitation" />
-        <a class="rsvp-submit" (click)="submit()">Submit</a>
+        <a [routerLink]="['/rsvp']">Submit</a>
         <p class="rsvp-respond-by">
             <i>Respond by October 17th, 2018</i>
         </p>
