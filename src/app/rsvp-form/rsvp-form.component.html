@@ -1,1 +1,11 @@
-<h1>RSVP Form</h1>
+<div class="rsvp-form-container">
+    <div *ngIf="!isValidated; else partyEntry" class="rsvp-form-validation">
+        <input #codeInput type="text" placeholder="Enter validation code" class="rsvp-form-input" />
+        <button (click)="validate(codeInput.value)">Validate</button>
+    </div>
+    <ng-template #partyEntry>
+        <div class="rsvp-party-form">
+            <h1>Validated</h1>
+        </div>
+    </ng-template>
+</div>
