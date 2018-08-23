@@ -1,0 +1,37 @@
+@import '../../variables';
+
+.rsvp-form-container {
+
+}
+
+.rsvp-form-validation {
+
+}
+
+.rsvp-form-input {
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid $off-white;
+    background-color: transparent;
+    padding: 5px;
+    text-align: center;
+    color: $off-white;
+    margin: 10px;
+}
+
+.rsvp-form-input::placeholder {
+    color:$off-white;
+    text-align: center;
+}
+
+.rsvp-form-button {
+
+}
+
+.rsvp-party-form {
+
+}
+
+.rsvp-party-form h1 {
+    color:$light-blue;
+}
