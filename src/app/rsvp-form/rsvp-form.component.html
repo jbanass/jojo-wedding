@@ -4,10 +4,24 @@
         <button class="rsvp-form-button" (click)="validate(codeInput.value)">Validate</button>
     </div>
     <ng-template #partyEntry>
-        <div class="rsvp-party-form">
+        <div class="rsvp-party-form-container">
             <h1>RSVP</h1>
-            <input class="rsvp-form-input" type="text" placeholder="What's your name?" />
-            <input class="rsvp-form-input" type="number" placeholder="How many are you bringing?" />
+            <input #partyLeaderName class="rsvp-form-input" type="text" placeholder="What's your full name?" />
+            <input #guestCount class="rsvp-form-input" type="number" placeholder="How many are you bringing?" />
+            <button class="rsvp-form-button" (click)="buildForm(partyLeaderName.value, guestCount.value)">Start</button>
         </div>
     </ng-template>
+    <ng-container *ngIf="partyList">
+        <div [formGroup]="partyList">
+            <div formArrayName="people">
+                <div *ngFor="let person of partyList.get('people').controls; let i = index">
+                    <div class="rsvp-person" [formGroupName]="i">
+                        <input class="rsvp-form-input" formControlName="name" placeholder="Guest Name" />
+                        <input class="rsvp-form-input" formControlName="food" placeholder="Food Choice" />
+                        <input class="rsvp-form-input" formControlName="foodNotes" placeholder="Food Notes" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
 </div>

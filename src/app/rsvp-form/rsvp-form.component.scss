@@ -1,11 +1,19 @@
 @import '../../variables';
 
 .rsvp-form-container {
-
+    height: auto;
+    min-height: 400px;
+    position: relative;
 }
 
 .rsvp-form-validation {
-
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
 }
 
 .rsvp-form-input {
@@ -17,6 +25,7 @@
     text-align: center;
     color: $off-white;
     margin: 10px;
+    outline:$light-blue;
 }
 
 .rsvp-form-input::placeholder {
@@ -25,7 +34,14 @@
 }
 
 .rsvp-form-button {
-
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    color: $off-white;
+    padding: 10px 20px;
+    border: 4px double;
+    display: block;
 }
 
 .rsvp-party-form {
@@ -34,4 +50,11 @@
 
 .rsvp-party-form h1 {
     color:$light-blue;
+}
+
+.rsvp-person {
+    background-color: $light-blue;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
 }
