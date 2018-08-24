@@ -83,4 +83,12 @@ export class RSVPFormComponent implements OnInit {
     this.isComing = false;
     alert("Thanks " + this.partyLeaderName + " for letting us know!");
   }
+
+  isBeefChecked(index) {
+    return (<FormArray>this.partyList.get('people')).controls[index].get('food').value === "0";
+  }
+
+  isChickenChecked(index) {
+    return (<FormArray>this.partyList.get('people')).controls[index].get('food').value === "1";
+  }
 }

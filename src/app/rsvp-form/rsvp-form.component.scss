@@ -72,7 +72,7 @@
 }
 
 .rsvp-person {
-    background-color: $light-blue;
+    background-color: $main-red;
     margin: 20px;
     text-align: center;
     padding: 10px;
@@ -80,4 +80,22 @@
 
 .rsvp-option {
     color:#000;
+}
+
+.rsvp-food-option-container {
+
+}
+
+.rsvp-food-option {
+    margin: 5px 0px;
+    padding: 30px;
+    display:block;
+}
+
+.rsvp-food-option input {
+    appearance: none;
+}
+
+.rsvp-food-option-selected {
+    border: 2px double $off-white;
 }

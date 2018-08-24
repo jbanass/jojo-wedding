@@ -27,11 +27,17 @@
                 <div *ngFor="let person of partyList.get('people').controls; let i = index">
                     <div class="rsvp-person" [formGroupName]="i">
                         <input class="rsvp-form-input" formControlName="name" placeholder="Guest Name" />
-                        <select class="rsvp-form-input" formControlName="food">
-                            <option class="rsvp-option" value="-1">Food Choice</option>
-                            <option class="rsvp-option" value="0">Beef Tenderloin</option>
-                            <option class="rsvp-option" value="1">Chicken Romano</option>
-                        </select>
+                        <div class="rsvp-food-option-container">
+                            <h3>Food Options</h3>
+                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isBeefChecked(i)" for="beef">
+                                Beef Tenderloin
+                                <input #beef id="beef" type="radio" value="0" formControlName="food">
+                            </label>
+                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isChickenChecked(i)" for="chicken">
+                                Chicken Romano
+                                <input #chicken id="chicken" type="radio" value="1" formControlName="food">
+                            </label>
+                        </div>
                         <textarea class="rsvp-form-input" formControlName="foodNotes" placeholder="Food Notes"></textarea>
                     </div>
                 </div>
