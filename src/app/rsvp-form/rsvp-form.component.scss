@@ -44,12 +44,31 @@
     display: block;
 }
 
-.rsvp-party-form {
-
+.rsvp-party-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.rsvp-party-form h1 {
+.rsvp-coming-or-not {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsvp-coming-or-not .rsvp-form-button {
+    margin:20px;
+}
+
+.rsvp-party-form-container h1 {
     color:$light-blue;
+    font-family:WildernessTypeFace;
+    font-size:6em;
+}
+
+.rsvp-people-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .rsvp-person {
@@ -57,4 +76,8 @@
     margin: 20px;
     text-align: center;
     padding: 10px;
+}
+
+.rsvp-option {
+    color:#000;
 }

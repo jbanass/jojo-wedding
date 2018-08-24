@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { FormGroup, FormControl, FormBuilder, FormArray } from "@angular/forms";
+import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@angular/forms";
 
 import { RSVPService } from "./rsvp.service";
 
@@ -15,6 +15,7 @@ export class RSVPFormComponent implements OnInit {
   party: FormGroup;
   partyList: FormGroup;
   partyLeaderName: string = '';
+  isComing: boolean = undefined;
 
 
   constructor(private service: RSVPService, private fb: FormBuilder) { }
@@ -26,12 +27,15 @@ export class RSVPFormComponent implements OnInit {
     // });
   }
 
+  setPartyLeader(name: string) {
+    this.partyLeaderName = name;
+  }
+
   buildForm(partyLeaderName: string, guestCount: string) {
     if (partyLeaderName !== null && guestCount !== null) {
-      this.partyLeaderName = partyLeaderName;
       var people = [];
 
-      const guestLimit = parseInt(guestCount) + 1;
+      const guestLimit = parseInt(guestCount);
 
       for (var i = 0; i < guestLimit; i++) {
         console.log(i);
@@ -46,7 +50,7 @@ export class RSVPFormComponent implements OnInit {
 
   createPerson(index: number) {
     var name: string = '';
-    var food: number = null;
+    var food: number = -1;
     var foodNotes: string = '';
 
     if (index === 0) {
@@ -55,8 +59,8 @@ export class RSVPFormComponent implements OnInit {
     }
 
     return this.fb.group({
-      name: name,
-      food: food,
+      name: new FormControl(name, Validators.required),
+      food: new FormControl(food, Validators.required),
       foodNotes: foodNotes
     });
   }
@@ -69,5 +73,14 @@ export class RSVPFormComponent implements OnInit {
         alert("Sorry, " + code + " is not valid.");
       }
     });
+  }
+
+  submitParty() {
+    console.log(this.partyList);
+  }
+
+  rejectInvite() {
+    this.isComing = false;
+    alert("Thanks " + this.partyLeaderName + " for letting us know!");
   }
 }
