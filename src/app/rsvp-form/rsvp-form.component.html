@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div *ngIf="isComing">
-                <input #guestCount class="rsvp-form-input" type="number" placeholder="How many are you bringing?" />
+                <input #guestCount class="rsvp-form-input" type="number" placeholder="# of guests" />
                 <button class="rsvp-form-button" (click)="buildForm(partyLeaderName.value, guestCount.value)">Start</button>
             </div>
         </div>

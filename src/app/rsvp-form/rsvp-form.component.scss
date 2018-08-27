@@ -4,6 +4,7 @@
     height: auto;
     min-height: 400px;
     position: relative;
+    padding-bottom:20px;
 }
 
 .rsvp-form-validation {
@@ -90,6 +91,11 @@
     margin: 5px 0px;
     padding: 30px;
     display:block;
+    transition: all .3s ease-in-out;
+}
+
+.rsvp-food-option:hover {
+    background-color: $light-red;
 }
 
 .rsvp-food-option input {

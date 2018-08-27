@@ -97,6 +97,7 @@ export class RSVPFormComponent implements OnInit {
   }
 
   isBeefChecked(index) {
+    console.log(index);
     return (<FormArray>this.partyList.get('people')).controls[index].get('food').value === "0";
   }
 
