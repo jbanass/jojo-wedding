@@ -65,6 +65,18 @@ export class RSVPFormComponent implements OnInit {
     });
   }
 
+  createChild() {
+    var name: string = '';
+    var food: number = -1;
+    var foodNotes: string = '';
+
+    return this.fb.group({
+      name: new FormControl(name, Validators.required),
+      food: new FormControl(food, Validators.required),
+      foodNotes: foodNotes
+    });
+  }
+
   validate(code: string) {
     this.service.submitRSVP(code).subscribe((result: boolean) => {
       this.isValidated = result;
