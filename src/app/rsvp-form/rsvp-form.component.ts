@@ -48,6 +48,7 @@ export class RSVPFormComponent implements OnInit {
 
   createPerson(index: number) {
     var name: string = "";
+    var age: string = "-1";
     var food: string = "-1";
     var foodNotes: string = "";
 
@@ -58,6 +59,7 @@ export class RSVPFormComponent implements OnInit {
 
     return new FormGroup({
       name: new FormControl(name, Validators.required),
+      age: new FormControl(age, Validators.required),
       food: new FormControl(food, Validators.required),
       foodNotes: new FormControl(foodNotes)
     });
@@ -77,6 +79,7 @@ export class RSVPFormComponent implements OnInit {
     const person: Person = {
       name: this.partyList.value["name"],
       food: this.partyList.value["food"],
+      age: this.partyList.value["age"],
       foodNotes: this.partyList.value["foodNotes"]
     };
 
@@ -89,7 +92,10 @@ export class RSVPFormComponent implements OnInit {
   }
 
   submitParty() {
-    this.AddGuest();
+    if (this.partyList.value["name"] && (this.partyList.value["food"] !== "-1") && (this.partyList.value["age"] !== "-1")) {
+      this.AddGuest();
+    }
+    
     alert("Thanks, your info has been saved! We can't wait to see you!");
     console.log(this.submittedPeople);
   }
@@ -99,17 +105,22 @@ export class RSVPFormComponent implements OnInit {
     alert("Thanks " + this.partyLeaderName + " for letting us know!");
   }
 
-  isBeefChecked() {
-    return this.partyList.value["food"] === "0";
+  isAdult() {
+    return this.partyList.value["age"] === "0";
   }
 
-  isChickenChecked() {
-    return this.partyList.value["food"] === "1";
+  isChild() {
+    return this.partyList.value["age"] === "1";
+  }
+
+  isFoodChecked(value: string) {
+    return this.partyList.value["food"] === value;
   }
 }
 
 class Person {
   name: string;
+  age: string;
   food: string;
   foodNotes: string;
 }

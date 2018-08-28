@@ -23,19 +23,35 @@
                 <input class="rsvp-form-input" formControlName="name" placeholder="Guest Name" />
                 <div class="rsvp-food-option-container">
                     <h3>Food Options</h3>
-                    <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isBeefChecked()" for="beef">
-                        Beef Tenderloin
-                        <input #beef id="beef" type="radio" value="0" formControlName="food">
+                    <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isAdult()" for="adult">
+                        Adult
+                        <input #ageAdult id="adult" type="radio" value="0" formControlName="age">
                     </label>
-                    <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isChickenChecked()" for="chicken">
-                        Chicken Romano
-                        <input #chicken id="chicken" type="radio" value="1" formControlName="food">
+                    <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isChild()" for="child">
+                        Child
+                        <input #ageChild id="child" type="radio" value="1" formControlName="age">
                     </label>
+                    <div *ngIf="isAdult()">
+                        <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isFoodChecked(beef.value)" for="beef">
+                            Beef Tenderloin
+                            <input #beef id="beef" type="radio" value="0" formControlName="food">
+                        </label>
+                        <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isFoodChecked(chicken.value)" for="chicken">
+                            Chicken Romano
+                            <input #chicken id="chicken" type="radio" value="1" formControlName="food">
+                        </label>
+                    </div>
+                    <div *ngIf="isChild()">
+                        <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isFoodChecked(kidone.value)" for="kidoption1">
+                            Chicken Tenders
+                            <input #kidone id="kidoption1" type="radio" value="2" formControlName="food">
+                        </label>
+                    </div>
                 </div>
                 <textarea class="rsvp-form-input" formControlName="foodNotes" placeholder="Food Notes"></textarea>
             </div>
         </div>
         <button [disabled]="!partyList.valid" class="rsvp-form-button" (click)="saveAndAddGuest()">Save and Add Guest</button>
-        <button [disabled]="!partyList.valid" class="rsvp-form-button" (click)="submitParty()">Submit</button>
+        <button class="rsvp-form-button" (click)="submitParty()">Finish RSVP</button>
     </ng-container>
 </div>
