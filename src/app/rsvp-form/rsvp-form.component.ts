@@ -1,6 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 
-import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@angular/forms";
+import {
+  FormGroup,
+  FormControl,
+  FormBuilder,
+  FormArray,
+  Validators
+} from "@angular/forms";
 
 import { RSVPService } from "./rsvp.service";
 
@@ -14,11 +20,11 @@ export class RSVPFormComponent implements OnInit {
   isValidated: boolean = false;
   party: FormGroup;
   partyList: FormGroup;
-  partyLeaderName: string = '';
+  partyLeaderName: string = "";
   isComing: boolean = undefined;
+  submittedPeople: any[] = [];
 
-
-  constructor(private service: RSVPService, private fb: FormBuilder) { }
+  constructor(private service: RSVPService, private fb: FormBuilder) {}
 
   ngOnInit() {
     // this.partyLeader = new FormGroup({
@@ -31,49 +37,29 @@ export class RSVPFormComponent implements OnInit {
     this.partyLeaderName = name;
   }
 
-  buildForm(partyLeaderName: string, guestCount: string) {
-    if (partyLeaderName !== null && guestCount !== null) {
-      var people = [];
+  buildForm() {
+    if (this.partyLeaderName !== null) {
+      console.log("building form", this.submittedPeople);
+      this.isComing = true;
 
-      const guestLimit = parseInt(guestCount);
-
-      for (var i = 0; i < guestLimit; i++) {
-        console.log(i);
-        people.push(this.createPerson(i));
-      }
-
-      this.partyList = this.fb.group({
-        people: this.fb.array(people)
-      });
+      this.partyList = this.createPerson(this.submittedPeople.length);
     }
   }
 
   createPerson(index: number) {
-    var name: string = '';
-    var food: number = -1;
-    var foodNotes: string = '';
+    var name: string = "";
+    var food: string = "-1";
+    var foodNotes: string = "";
 
     if (index === 0) {
       name = this.partyLeaderName;
       console.log("Hit index 0", name);
     }
 
-    return this.fb.group({
+    return new FormGroup({
       name: new FormControl(name, Validators.required),
       food: new FormControl(food, Validators.required),
-      foodNotes: foodNotes
-    });
-  }
-
-  createChild() {
-    var name: string = '';
-    var food: number = -1;
-    var foodNotes: string = '';
-
-    return this.fb.group({
-      name: new FormControl(name, Validators.required),
-      food: new FormControl(food, Validators.required),
-      foodNotes: foodNotes
+      foodNotes: new FormControl(foodNotes)
     });
   }
 
@@ -87,8 +73,25 @@ export class RSVPFormComponent implements OnInit {
     });
   }
 
+  AddGuest() {
+    const person: Person = {
+      name: this.partyList.value["name"],
+      food: this.partyList.value["food"],
+      foodNotes: this.partyList.value["foodNotes"]
+    };
+
+    this.submittedPeople = [...this.submittedPeople, person];
+  }
+
+  saveAndAddGuest() {
+    this.AddGuest();
+    this.buildForm();
+  }
+
   submitParty() {
-    console.log(this.partyList);
+    this.AddGuest();
+    alert("Thanks, your info has been saved! We can't wait to see you!");
+    console.log(this.submittedPeople);
   }
 
   rejectInvite() {
@@ -96,12 +99,17 @@ export class RSVPFormComponent implements OnInit {
     alert("Thanks " + this.partyLeaderName + " for letting us know!");
   }
 
-  isBeefChecked(index) {
-    console.log(index);
-    return (<FormArray>this.partyList.get('people')).controls[index].get('food').value === "0";
+  isBeefChecked() {
+    return this.partyList.value["food"] === "0";
   }
 
-  isChickenChecked(index) {
-    return (<FormArray>this.partyList.get('people')).controls[index].get('food').value === "1";
+  isChickenChecked() {
+    return this.partyList.value["food"] === "1";
   }
+}
+
+class Person {
+  name: string;
+  food: string;
+  foodNotes: string;
 }

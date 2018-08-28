@@ -11,38 +11,31 @@
             <div *ngIf="isComing === undefined">
                 <div class="rsvp-coming-or-not" *ngIf="partyLeaderName">
                     <h2>Hey {{partyLeaderName}}! Are you coming?</h2>
-                    <button class="rsvp-form-button" (click)="isComing = true">Yes</button>
+                    <button class="rsvp-form-button" (click)="buildForm()">Yes</button>
                     <button class="rsvp-form-button" (click)="rejectInvite()">No</button>
                 </div>
-            </div>
-            <div *ngIf="isComing">
-                <input #guestCount class="rsvp-form-input" type="number" placeholder="# of guests" />
-                <button class="rsvp-form-button" (click)="buildForm(partyLeaderName.value, guestCount.value)">Start</button>
             </div>
         </div>
     </ng-template>
     <ng-container *ngIf="partyList">
         <div class="rsvp-people-container" [formGroup]="partyList">
-            <div formArrayName="people">
-                <div *ngFor="let person of partyList.get('people').controls; let i = index">
-                    <div class="rsvp-person" [formGroupName]="i">
-                        <input class="rsvp-form-input" formControlName="name" placeholder="Guest Name" />
-                        <div class="rsvp-food-option-container">
-                            <h3>Food Options</h3>
-                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isBeefChecked(i)" for="beef">
-                                Beef Tenderloin
-                                <input #beef id="beef" type="radio" value="0" formControlName="food">
-                            </label>
-                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isChickenChecked(i)" for="chicken">
-                                Chicken Romano
-                                <input #chicken id="chicken" type="radio" value="1" formControlName="food">
-                            </label>
-                        </div>
-                        <textarea class="rsvp-form-input" formControlName="foodNotes" placeholder="Food Notes"></textarea>
-                    </div>
+            <div class="rsvp-person">
+                <input class="rsvp-form-input" formControlName="name" placeholder="Guest Name" />
+                <div class="rsvp-food-option-container">
+                    <h3>Food Options</h3>
+                    <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isBeefChecked()" for="beef">
+                        Beef Tenderloin
+                        <input #beef id="beef" type="radio" value="0" formControlName="food">
+                    </label>
+                    <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isChickenChecked()" for="chicken">
+                        Chicken Romano
+                        <input #chicken id="chicken" type="radio" value="1" formControlName="food">
+                    </label>
                 </div>
+                <textarea class="rsvp-form-input" formControlName="foodNotes" placeholder="Food Notes"></textarea>
             </div>
-            <button [disabled]="!partyList.valid" class="rsvp-form-button" (click)="submitParty()">Submit</button>
         </div>
+        <button [disabled]="!partyList.valid" class="rsvp-form-button" (click)="saveAndAddGuest()">Save and Add Guest</button>
+        <button [disabled]="!partyList.valid" class="rsvp-form-button" (click)="submitParty()">Submit</button>
     </ng-container>
 </div>
