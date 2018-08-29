@@ -30,6 +30,15 @@
 }
 
 .hotel-description {
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  font-size: 0.7em;
+  width: 87.5%;
+  margin: 0 auto;
+}
+
+.hotel-description p {
+  margin: 10px;
 }
 
 .hotel-info-container {
@@ -40,7 +49,7 @@
 }
 
 .half-hr {
-  width:50%;
+  width: 50%;
   margin: 0 auto;
   border-color: $light-red;
 }
