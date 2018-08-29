@@ -54,12 +54,8 @@
   border-color: $light-red;
 }
 
-.reserve-button {
-  padding: 15px 0px;
-  display: inline-block;
-  border: 4px double #eae9e4;
-  margin: 20px;
-  width: 170px;
+.hotel-button {
+  border: 4px double $light-red;
 }
 
 @media screen and (min-width: 768px) {

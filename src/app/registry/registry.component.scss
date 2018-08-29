@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .square-container {
-  width: 230px;
+  width: 87.5%;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
@@ -17,14 +17,15 @@
 }
 
 .registry-image-container {
-  display:none;
+  display: none;
 }
 
-.registry-image-1, .registry-image-2 {
-  height:200px;
-  width:200px;
-  border: 1px solid #fff;
-  background-color:gray;
+.registry-image-1,
+.registry-image-2 {
+  height: 200px;
+  width: 200px;
+  border: 1px solid $off-white;
+  background-color: gray;
 }
 
 .registry-header-container {
@@ -32,24 +33,24 @@
 
 .half-hr {
   width: 50%;
-    margin: 0 auto 15px auto;
-    height: 1px;
-    border: 1px solid $light-blue;
+  margin: 0 auto 15px auto;
+  height: 1px;
+  border: 1px solid $light-blue;
 }
 
 .target {
   background-image: url("/assets/images/target-logo.png");
-  background-size:contain;
-  height:80px;
-  width:200px;
+  background-size: contain;
+  height: 80px;
+  width: 200px;
   background-repeat: no-repeat;
 }
 
 .bbb {
   background-image: url("/assets/images/bed-bath-logo.png");
-  background-size:contain;
-  height:80px;
-  width:200px;
+  background-size: contain;
+  height: 80px;
+  width: 200px;
   background-repeat: no-repeat;
 }
 
@@ -64,13 +65,16 @@
 }
 
 .registry-info {
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  font-size: 0.7em;
 }
 
 .registry-options-container {
   padding-top: 10px;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .square-container {
     width: 230px;
     position: initial;
@@ -81,11 +85,11 @@
   }
 
   .registry-container {
-    height:500px;
+    height: 500px;
   }
 
   .registry-options-container {
-    display:inline-flex;
+    display: inline-flex;
   }
 
   .registry-image-container {
@@ -96,7 +100,6 @@
   }
 
   .container {
-
   }
 
   .half-hr {
@@ -121,5 +124,4 @@
     position: absolute;
     left: 50px;
   }
-
 }

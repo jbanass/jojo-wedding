@@ -1,18 +1,18 @@
 @import "../../variables";
 
 .footer-container {
-    text-align: center;
-    padding:20px 0px;
-    background-color: $dark-blue;
-    position: sticky;
-    bottom: 0;
-    width:100vw;
+  text-align: center;
+  padding: 20px 0px;
+  background-color: $dark-blue;
+  position: sticky;
+  bottom: 0;
+  width: 100vw;
 }
 
 .footer {
-    font-size: .7em;   
+  font-size: 0.3em;
 }
 
 .footer-slash {
-    color: $light-red;
+  color: $light-red;
 }

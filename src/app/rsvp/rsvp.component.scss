@@ -1,84 +1,74 @@
 @import "../../variables";
 
 .square-container {
-    width: 90%;
-    height: 250px;
-    position: relative;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    background-color: #3a1b23;
-    padding: 3px;
-    text-align: center;
-  }
+  width: 87.5%;
+  height: 250px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  background-color: #3a1b23;
+  padding: 3px;
+  text-align: center;
+}
 
 .rsvp-container {
-    background-image: url(/assets/images/rsvp-background.jpg);
-        background-attachment: fixed;
-        background-size: cover;
-    text-align: center;
-    height:auto;
-    padding-bottom:40px;
+  background-image: url(/assets/images/rsvp-background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  height: auto;
+  padding-bottom: 40px;
 }
 
 .rsvp-info {
-    position: relative;
-    top:-20px;
-
+  position: relative;
+  top: -20px;
 }
 
 .rsvp-input {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    -webkit-appearance: none;
-    border: none;
-    background-color: transparent;
-    color: #eae9e4;
-    border-bottom: 1px solid #eae9e4;
-    width: 60%;
-    padding-bottom: 5px;
-    outline: none;
-    font-family: inherit;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  color: #eae9e4;
+  border-bottom: 1px solid #eae9e4;
+  width: 60%;
+  padding-bottom: 5px;
+  outline: none;
+  font-family: inherit;
 }
 
 .rsvp-input::placeholder {
-    color: $off-white;
+  color: $off-white;
 }
-
-.rsvp-submit {
-    padding: 20px;
-    display: inline-block;
-    border: 4px double #eae9e4;
-    margin: 20px 20px 5px 20px;
-    width: 150px;
-}
-
 
 .rsvp-respond-by {
-    color: $light-red;
-    font-size:90%;
-    padding:8px;
+  color: $light-red;
+  font-size: 0.6em;
+  padding: 18px;
 }
 
 .rsvp-header {
-    color: $light-red;
+  color: $light-red;
 }
 
-@media screen and (min-width:768px) {
-    .rsvp-container {
-        height: 390px;
-        background-position-x: -40px;
-    }
+@media screen and (min-width: 768px) {
+  .rsvp-container {
+    height: 390px;
+    background-position-x: -40px;
+  }
 
-    .square-container {
-        width:500px;
-    }
+  .square-container {
+    width: 500px;
+  }
 
-    .rsvp-info {
-        position: relative;
-        top: -60px;
-        margin-left: -150px;
-        height: 375px;
-    }
+  .rsvp-info {
+    position: relative;
+    top: -60px;
+    margin-left: -150px;
+    height: 375px;
+  }
 }

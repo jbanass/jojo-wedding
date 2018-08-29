@@ -166,6 +166,17 @@ ul {
   }
 }
 
+.button {
+  padding: 20px;
+  display: inline-block;
+  border: 4px double $off-white;
+  margin: 20px 20px 5px 20px;
+  width: 150px;
+  text-decoration: none;
+  color: $off-white;
+  font-size: 0.5em;
+}
+
 @media screen and (min-width: 768px) {
   .section-header {
     font-size: 8.5em;
