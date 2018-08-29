@@ -92,8 +92,12 @@
 
   .couple-container {
     margin: 0 auto;
-    width: 50vw;
+    width: 80vw;
     text-align: center;
+  }
+
+  .couple-description h2 {
+    font-size:3em;
   }
 
   .bride-container {
@@ -109,18 +113,18 @@
 
   .groom-container {
     display: inline-flex;
-    top: -5px;
+    top: -8px;
     position: relative;
     width: 100%;
   }
 
   .bride-container .square-container.couple-picture {
-    height: 200px;
-    top: 33px;
-    position: relative;
+    height: auto;
+    background-position:bottom;
   }
 
   .groom-container .square-container.couple-picture {
-    height: 170px;
+    height: auto;
+    background-position: top;
   }
 }

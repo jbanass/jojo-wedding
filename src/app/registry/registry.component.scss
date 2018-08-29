@@ -22,8 +22,8 @@
 
 .registry-image-1,
 .registry-image-2 {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border: 1px solid $off-white;
   background-color: gray;
 }
@@ -115,7 +115,8 @@
 
   .pull-right {
     position: relative;
-    left: 250px;
+    left: 130px;
+    top:-50px;
   }
 
   .registry-image-1 {
