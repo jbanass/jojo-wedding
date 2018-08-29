@@ -12,7 +12,7 @@
 .registry-container {
   background-color: $main-blue;
   height: auto;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -68,6 +68,9 @@
   font-family: $copy-font-stack;
   font-style: $copy-font-style;
   font-size: 0.7em;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.5em;
 }
 
 .registry-options-container {
