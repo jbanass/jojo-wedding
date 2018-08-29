@@ -21,7 +21,7 @@
   text-align: center;
   padding: 50px 0px;
   width: 100vw;
-  color:$light-blue;
+  color: $light-blue;
 }
 
 .bridesmaids-list-container {
@@ -44,8 +44,19 @@
   padding: 10px 0px;
 }
 
-.bridesmaid-container h3, .groomsmen-container h3 {
-  font-size:80%;
+.bridesmaid-container h2,
+.groomsmen-container h2 {
+  font-family: $all-caps-font-stack;
+  font-size: 0.7em;
+  letter-spacing: $all-caps-letter-spacing;
+}
+
+.bridesmaid-container h3,
+.groomsmen-container h3 {
+  font-size: 0.6em;
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  letter-spacing: 0.05em;
 }
 
 .groomsmen-container {

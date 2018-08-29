@@ -1,11 +1,5 @@
 @import "variables";
 
-$font-stack: "mrs-eaves-roman-all-small-ca", serif;
-$font-size: 1.05em;
-$letter-spacing: 5px;
-
-$font-color: $off-white;
-
 @font-face {
   font-family: WildernessTypeFace;
   src: url("./assets/fonts/WildernessTypeface-Regular.ttf");
@@ -25,7 +19,7 @@ html,
 body {
   background-color: $main-blue;
   color: $font-color;
-  font-family: $font-stack;
+  font-family: $copy-font-stack;
   font-size: $font-size;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -51,22 +45,32 @@ h6 {
   font-weight: inherit;
 }
 
+h1 {
+  font-size: 2.15em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
 .section-header {
   font-family: WildernessTypeFace;
-  font-size: 4.0em;
+  letter-spacing: initial;
+}
+
+ul {
+  line-height: 0.8em;
+  list-style: none;
 }
 
 /* -------------------------------*/
 /*REUSABLE COMPONENTS             */
 /* -------------------------------*/
 
-.row {
-  max-width: 1140px;
-  margin: 0 auto; /*centering the row*/
-}
-
-section {
+.section {
   padding: 0px 0;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .loader {

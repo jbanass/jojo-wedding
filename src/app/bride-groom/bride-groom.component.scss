@@ -8,13 +8,13 @@
 
 .bride-groom-header {
   text-align: center;
-  padding: 10px 3px 50px 3px;
+  padding: 30px 3px 50px 3px;
   width: 100vw;
-  color:$light-blue;
+  color: $light-blue;
 }
 
 .square-container {
-  width: 200px;
+  width: 87.5%;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
@@ -31,17 +31,18 @@
 
 .couple-description h2 {
   color: $light-red;
-  font-size:2.5em;
 }
 
 .couple-description hr {
-  width: 50px;
+  width: 100px;
   margin: 20px 0px;
-  border-color: $light-red;
+  border: 1px solid $light-red;
 }
 
 .couple-description p {
-  font-size: 0.8em;
+  font-size: 0.7em;
+  font-family: $all-caps-font-stack;
+  letter-spacing: $all-caps-letter-spacing;
 }
 
 .couple-description ul {
@@ -51,6 +52,7 @@
 .couple-description ul li {
   font-size: 0.6em;
   font-style: italic;
+  letter-spacing: 0.05em;
 }
 
 .couple-description-right {
@@ -61,17 +63,17 @@
 .couple-picture {
   background-color: gray;
   height: 200px;
-    background-size: contain;
+  background-size: contain;
 }
 
 .bride-container .square-container.couple-picture {
-  background: url("/assets/images/jordan-toddler.jpg")  no-repeat center top;
-  background-size:100%;
+  background: url("/assets/images/jordan-toddler.jpg") no-repeat center top;
+  background-size: 100%;
 }
 
 .groom-container .square-container.couple-picture {
   background: url("/assets/images/joe-toddler.jpg") no-repeat center top;
-  background-size:100%;
+  background-size: 100%;
 }
 
 .couple-picture-right {
@@ -81,11 +83,11 @@
 
 @media screen and (min-width: 768px) {
   .square-container {
-    position:initial;
+    position: initial;
     left: initial;
     transform: none;
     text-align: left;
-    width:50%;
+    width: 50%;
   }
 
   .couple-container {
@@ -97,30 +99,28 @@
   .bride-container {
     display: inline-flex;
     flex-direction: row-reverse;
-    width:100%;
+    width: 100%;
   }
 
   .couple-picture {
-    height:auto;
-    background-size:cover;
+    height: auto;
+    background-size: cover;
   }
 
   .groom-container {
     display: inline-flex;
     top: -5px;
     position: relative;
-    width:100%;
+    width: 100%;
   }
 
-
-
   .bride-container .square-container.couple-picture {
-    height:200px;
+    height: 200px;
     top: 33px;
-    position:relative;
+    position: relative;
   }
 
   .groom-container .square-container.couple-picture {
-    height:170px;
+    height: 170px;
   }
 }
