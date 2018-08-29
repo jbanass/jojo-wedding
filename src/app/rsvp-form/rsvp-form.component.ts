@@ -23,6 +23,7 @@ export class RSVPFormComponent implements OnInit {
   partyLeaderName: string = "";
   isComing: boolean = undefined;
   submittedPeople: any[] = [];
+  submitted: boolean = false;
 
   constructor(private service: RSVPService, private fb: FormBuilder) {}
 
@@ -92,12 +93,29 @@ export class RSVPFormComponent implements OnInit {
   }
 
   submitParty() {
-    if (this.partyList.value["name"] && (this.partyList.value["food"] !== "-1") && (this.partyList.value["age"] !== "-1")) {
+    if (
+      this.partyList.value["name"] &&
+      this.partyList.value["food"] !== "-1" &&
+      this.partyList.value["age"] !== "-1"
+    ) {
       this.AddGuest();
     }
-    
+
+    this.submitted = true;
+  }
+
+  submitSong(song: string) {
+    const rsvp: RSVP = {
+      people: this.submittedPeople,
+      song: song
+    };
+
+    console.log(rsvp);
+    this.saveToDB();
+  }
+
+  saveToDB() {
     alert("Thanks, your info has been saved! We can't wait to see you!");
-    console.log(this.submittedPeople);
   }
 
   rejectInvite() {
@@ -123,4 +141,9 @@ class Person {
   age: string;
   food: string;
   foodNotes: string;
+}
+
+class RSVP {
+  people: Array<Person>;
+  song: string;
 }
