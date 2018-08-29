@@ -1,20 +1,33 @@
 @import "../../variables";
 
 .square-container {
-  width: 230px;
+  width: 87.5%;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: $main-red;
-  padding: 3px;
+  padding: 3px 3px 20px 3px;
   text-align: center;
   top: -65px;
 }
 
+.festivities-subheader {
+  font-family: $all-caps-font-stack;
+  letter-spacing: $all-caps-letter-spacing;
+  font-size: 0.7em;
+}
+
+.festivities-copy {
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  font-size: 0.6em;
+  line-height: 1.4em;
+}
+
 .half-hr {
-  width:50%;
+  width: 50%;
   margin: 20px auto;
-  border-color:$light-red;
+  border: 1px solid $light-red;
 }
 
 .festivities-container {
@@ -25,19 +38,18 @@
 .festivities-header {
   text-align: center;
   padding: 20px 0px;
-  color:$light-red;
+  color: $light-red;
 }
 
 .festivities-background {
   height: 200px;
   background-color: #d3d3d3;
   background-image: url("/assets/images/festivities-background.jpg");
-  background-size:cover;
+  background-size: cover;
   margin-bottom: 20px;
 }
 
 .festivities-square-container {
-
 }
 
 @media screen and (min-width: 768px) {
@@ -45,8 +57,8 @@
     background-color: #3d3d3d;
     padding: 40px;
     background-image: url("/assets/images/festivities-background.jpg");
-    background-size:cover;
-    height:600px;
+    background-size: cover;
+    height: 600px;
     text-align: -webkit-center;
   }
 
@@ -76,9 +88,6 @@
   .festivities-header {
     padding: 0;
   }
-
-  
-
 }
 
 @media screen and (min-width: 1320px) {
@@ -86,7 +95,7 @@
     background-color: #3d3d3d;
     padding: 40px;
     background-image: url("/assets/images/festivities-background.jpg");
-    background-size:cover;
+    background-size: cover;
     background-attachment: fixed;
   }
 }
