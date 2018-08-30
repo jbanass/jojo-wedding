@@ -118,12 +118,10 @@
   }
 
   .bride-container .square-container.couple-picture {
-    height: auto;
-    background-position: bottom;
+    align-self: flex-end;
   }
 
   .groom-container .square-container.couple-picture {
-    height: auto;
-    background-position: top;
+    align-self: flex-start;
   }
 }
