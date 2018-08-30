@@ -7,7 +7,7 @@
         <div class="rsvp-header">
             <h1>RSVP</h1>
         </div>
-        <div *ngIf="partyLeaderName === undefined" [formGroup]="partyLeaderForm">
+        <div *ngIf="partyMembers.length === 0" [formGroup]="personForm">
             <input formControlName="firstName" class="rsvp-form-input" placeholder="First Name" />
             <input formControlName="lastName" class="rsvp-form-input" placeholder="Last Name" />
 
@@ -19,7 +19,10 @@
                 <input value="1" type="radio" class="rsvp-form-checkbox" formControlName="coming" />
                 <span class="rsvp-checkbox-check"></span>
             </label>
-            <button (click)="submitPartyLeader()" [disabled]="!partyLeaderForm.valid" class="button rsvp-form-button">Continue</button>
+            <button (click)="submitPartyMember()" [disabled]="!partyLeaderForm.valid" class="button rsvp-form-button">Save
+                and Add Guest</button>
+            <button (click)="submitParty()" [disabled]="!partyLeaderForm.valid" class="button rsvp-form-button">Submit RSVP
+            </button>
         </div>
     </div>
 </div>

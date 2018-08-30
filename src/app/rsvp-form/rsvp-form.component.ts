@@ -19,8 +19,9 @@ export class RSVPFormComponent implements OnInit {
   validationCode: string = null;
   isValidated: boolean = false;
 
-  partyLeaderForm: FormGroup;
+  personForm: FormGroup;
   message: string = undefined;
+  partyMembers: Array<Person> = new Array<Person>();
 
   party: FormGroup;
   partyList: FormGroup;
@@ -30,20 +31,29 @@ export class RSVPFormComponent implements OnInit {
   submitted: boolean = false;
 
   constructor(private service: RSVPService, private fb: FormBuilder) {
-    this.partyLeaderForm = new FormGroup({
+    this.personForm = new FormGroup({
       firstName: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
-      coming: new FormControl("-1", Validators.required)
+      coming: new FormControl("-1", Validators.required),
+      age: new FormControl("-1", Validators.required),
+      food: new FormControl("-1", Validators.required),
+      foodNotes: new FormControl("")
     });
   }
 
   ngOnInit() {}
 
-  submitPartyLeader() {
-    if (this.partyLeaderForm.get("coming").value == "1") {
-      this.message = "Thank you for letting us know!";
-      this.partyLeaderName = "";
-    }
+  submitPartyMember() {
+    const person: Person = {
+      firstName: this.personForm.get("firstName").value,
+      lastName: this.personForm.get("lastName").value,
+      coming: this.personForm.get("coming").value,
+      age: this.personForm.get("age").value,
+      food: this.personForm.get("food").value,
+      foodNotes: this.personForm.get("foodNotes").value
+    };
+
+    this.partyMembers.push(person);
   }
 
   setPartyLeader(name: string) {
@@ -90,7 +100,7 @@ export class RSVPFormComponent implements OnInit {
 
   AddGuest() {
     const person: Person = {
-      name: this.partyList.value["name"],
+      firstName: this.partyList.value["firstName"],
       food: this.partyList.value["food"],
       age: this.partyList.value["age"],
       foodNotes: this.partyList.value["foodNotes"]
@@ -149,7 +159,9 @@ export class RSVPFormComponent implements OnInit {
 }
 
 class Person {
-  name: string;
+  firstName: string;
+  lastName: string;
+  coming: string;
   age: string;
   food: string;
   foodNotes: string;
