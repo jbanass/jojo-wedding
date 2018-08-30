@@ -7,7 +7,7 @@
         <div class="rsvp-header">
             <h1>RSVP</h1>
         </div>
-        <div *ngIf="!partyLeaderName" [formGroup]="partyLeaderForm">
+        <div *ngIf="partyLeaderName === undefined" [formGroup]="partyLeaderForm">
             <input formControlName="firstName" class="rsvp-form-input" placeholder="First Name" />
             <input formControlName="lastName" class="rsvp-form-input" placeholder="Last Name" />
 
@@ -21,5 +21,15 @@
             </label>
             <button (click)="submitPartyLeader()" [disabled]="!partyLeaderForm.valid" class="button rsvp-form-button">Continue</button>
         </div>
+    </div>
+</div>
+<div class="modal" *ngIf="message">
+    <div class="modal-content">
+        <p>
+            {{message}}
+        </p>
+        <button class="button rsvp-form-button" (click)="message = undefined">
+            Tap to close
+        </button>
     </div>
 </div>

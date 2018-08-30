@@ -20,6 +20,7 @@ export class RSVPFormComponent implements OnInit {
   isValidated: boolean = false;
 
   partyLeaderForm: FormGroup;
+  message: string = undefined;
 
   party: FormGroup;
   partyList: FormGroup;
@@ -39,7 +40,10 @@ export class RSVPFormComponent implements OnInit {
   ngOnInit() {}
 
   submitPartyLeader() {
-    console.log(this.partyLeaderForm);
+    if (this.partyLeaderForm.get("coming").value == "1") {
+      this.message = "Thank you for letting us know!";
+      this.partyLeaderName = "";
+    }
   }
 
   setPartyLeader(name: string) {
