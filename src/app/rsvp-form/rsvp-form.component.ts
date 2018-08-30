@@ -18,20 +18,28 @@ import { RSVPService } from "./rsvp.service";
 export class RSVPFormComponent implements OnInit {
   validationCode: string = null;
   isValidated: boolean = false;
+
+  partyLeaderForm: FormGroup;
+
   party: FormGroup;
   partyList: FormGroup;
-  partyLeaderName: string = "";
+  partyLeaderName: string = undefined;
   isComing: boolean = undefined;
   submittedPeople: any[] = [];
   submitted: boolean = false;
 
-  constructor(private service: RSVPService, private fb: FormBuilder) {}
+  constructor(private service: RSVPService, private fb: FormBuilder) {
+    this.partyLeaderForm = new FormGroup({
+      firstName: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
+      coming: new FormControl("-1", Validators.required)
+    });
+  }
 
-  ngOnInit() {
-    // this.partyLeader = new FormGroup({
-    //   name: new FormControl(),
-    //   guestCount: new FormControl()
-    // });
+  ngOnInit() {}
+
+  submitPartyLeader() {
+    console.log(this.partyLeaderForm);
   }
 
   setPartyLeader(name: string) {

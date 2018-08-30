@@ -1,107 +1,136 @@
-@import '../../variables';
+@import "../../variables.scss";
 
 .rsvp-form-container {
-    height: auto;
-    min-height: 400px;
-    position: relative;
-    padding-bottom:20px;
+  height: 100vh;
+  background: url(/assets/images/festivities-background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.rsvp-form-validation {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
+.rsvp-form-image-container {
+}
+
+.rsvp-form-image-container img {
+  display: none;
+}
+
+.rsvp-form {
+  background-color: $main-red;
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.rsvp-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.rsvp-header h1 {
+  text-align: center;
+  font-family: WildernessTypeFace;
+  color: $light-red;
 }
 
 .rsvp-form-input {
-    -webkit-appearance: none;
-    border: none;
-    border-bottom: 1px solid $off-white;
-    background-color: transparent;
-    padding: 5px;
-    text-align: center;
-    color: $off-white;
-    margin: 10px;
-    outline:$light-blue;
+  -webkit-appearance: none;
+  border: none;
+  border-bottom: 2px solid $light-red;
+  background-color: transparent;
+  padding: 5px;
+  text-align: left;
+  margin: 10px 0px;
+  color: $off-white;
+  outline: $light-blue;
+  font-size: 0.7em;
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
 }
 
 .rsvp-form-input::placeholder {
-    color:$off-white;
-    text-align: center;
+  color: $off-white;
+  text-align: left;
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  color: $light-red;
+}
+
+.rsvp-form-checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 12px 0px;
+  font-size: 0.5em;
+  font-family: $all-caps-font-stack;
+  color: $light-red;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.rsvp-form-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rsvp-checkbox-check {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid $light-red;
+}
+
+.rsvp-form-checkbox-label:hover .rsvp-form-checkbox ~ .rsvp-checkbox-check {
+  background-color: transparent;
+}
+
+.rsvp-form-checkbox-label .rsvp-form-checkbox:checked ~ .rsvp-checkbox-check {
+  background-color: transparent;
+}
+
+.rsvp-checkbox-check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.rsvp-form-checkbox-label
+  .rsvp-form-checkbox:checked
+  ~ .rsvp-checkbox-check::after {
+  display: block;
+}
+
+.rsvp-form-checkbox-label .rsvp-checkbox-check::after {
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 14px;
+  border: 1px solid $light-red;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rsvp-form-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    color: $off-white;
-    padding: 10px 20px;
-    border: 4px double;
-    display: block;
+  background-color: transparent;
+  font-family: $all-caps-font-stack;
+  color: $light-red;
+  border-color: $light-red;
+  margin-left: 0px;
 }
 
-.rsvp-party-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.rsvp-coming-or-not {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.rsvp-coming-or-not .rsvp-form-button {
-    margin:20px;
-}
-
-.rsvp-party-form-container h1 {
-    color:$light-blue;
-    font-family:WildernessTypeFace;
-    font-size:6em;
-}
-
-.rsvp-people-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.rsvp-person {
-    background-color: $main-red;
-    margin: 20px;
-    text-align: center;
-    padding: 10px;
-}
-
-.rsvp-option {
-    color:#000;
-}
-
-.rsvp-food-option-container {
-
-}
-
-.rsvp-food-option {
-    margin: 5px 0px;
-    padding: 30px;
-    display:block;
-    transition: all .3s ease-in-out;
-}
-
-.rsvp-food-option:hover {
-    background-color: $light-red;
-}
-
-.rsvp-food-option input {
-    appearance: none;
-}
-
-.rsvp-food-option-selected {
-    border: 2px double $off-white;
+@media screen and (min-width: 768px) {
 }

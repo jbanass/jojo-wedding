@@ -8,9 +8,7 @@ import { AppComponent } from "./app.component";
 
 import { AppContainerModule } from "./app-container/app-container.module";
 
-import { HeroModule } from "./hero/hero.module";
 import { FooterModule } from "./footer/footer.module";
-import { NavModule } from "./nav/nav.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,9 +18,7 @@ import { NavModule } from "./nav/nav.module";
     FormsModule,
     HttpModule,
     AppContainerModule,
-    HeroModule,
-    FooterModule,
-    NavModule
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

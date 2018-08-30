@@ -1,65 +1,25 @@
+<nav></nav>
+<div class="rsvp-form-image-container">
+    <img class="rsvp-form-container-background" src="/assets/images/festivities-background.jpg" />
+</div>
 <div class="rsvp-form-container">
-    <div *ngIf="!isValidated; else partyEntry" class="rsvp-form-validation">
-        <input #codeInput type="text" placeholder="Enter validation code" class="rsvp-form-input" />
-        <button class="rsvp-form-button" (click)="validate(codeInput.value)">Validate</button>
-    </div>
-    <ng-template #partyEntry>
-        <div class="rsvp-party-form-container">
+    <div class="rsvp-form">
+        <div class="rsvp-header">
             <h1>RSVP</h1>
-            <input #partyLeaderInput (blur)="setPartyLeader(partyLeaderInput.value)" class="rsvp-form-input" type="text" placeholder="What's your full name?"
-            />
-            <div *ngIf="isComing === undefined">
-                <div class="rsvp-coming-or-not" *ngIf="partyLeaderName">
-                    <h2>Hey {{partyLeaderName}}! Are you coming?</h2>
-                    <button class="rsvp-form-button" (click)="buildForm()">Yes</button>
-                    <button class="rsvp-form-button" (click)="rejectInvite()">No</button>
-                </div>
-            </div>
         </div>
-    </ng-template>
-    <div *ngIf="!submitted">
-        <ng-container *ngIf="partyList">
-            <div class="rsvp-people-container" [formGroup]="partyList">
-                <div class="rsvp-person">
-                    <input class="rsvp-form-input" formControlName="name" placeholder="Guest Name" />
-                    <div class="rsvp-food-option-container">
-                        <h3>Food Options</h3>
-                        <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isAdult()" for="adult">
-                            Adult
-                            <input #ageAdult id="adult" type="radio" value="0" formControlName="age">
-                        </label>
-                        <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isChild()" for="child">
-                            Child
-                            <input #ageChild id="child" type="radio" value="1" formControlName="age">
-                        </label>
-                        <div *ngIf="isAdult()">
-                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isFoodChecked(beef.value)" for="beef">
-                                Beef Tenderloin
-                                <input #beef id="beef" type="radio" value="0" formControlName="food">
-                            </label>
-                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isFoodChecked(chicken.value)" for="chicken">
-                                Chicken Romano
-                                <input #chicken id="chicken" type="radio" value="1" formControlName="food">
-                            </label>
-                        </div>
-                        <div *ngIf="isChild()">
-                            <label class="rsvp-food-option" [class.rsvp-food-option-selected]="isFoodChecked(kidone.value)" for="kidoption1">
-                                Chicken Tenders
-                                <input #kidone id="kidoption1" type="radio" value="2" formControlName="food">
-                            </label>
-                        </div>
-                    </div>
-                    <textarea class="rsvp-form-input" formControlName="foodNotes" placeholder="Food Notes"></textarea>
-                </div>
-            </div>
-            <button [disabled]="!partyList.valid" class="rsvp-form-button" (click)="saveAndAddGuest()">Save and Add Guest</button>
-            <button class="rsvp-form-button" (click)="submitParty()">Finish Guests</button>
-        </ng-container>
-    </div>
-    <div *ngIf="submitted">
-        <h2>One more thing...</h2>
-        <p>What song would get you on the dance floor?</p>
-        <input #song class="rsvp-form-input" placeholder="Song Name and Artist" />
-        <button class="rsvp-form-button" (click)="submitSong(song.value)">Submit RSVP</button>
+        <div *ngIf="!partyLeaderName" [formGroup]="partyLeaderForm">
+            <input formControlName="firstName" class="rsvp-form-input" placeholder="First Name" />
+            <input formControlName="lastName" class="rsvp-form-input" placeholder="Last Name" />
+
+            <label class="rsvp-form-checkbox-label">Accept with Pleasure
+                <input value="0" type="radio" class="rsvp-form-checkbox" formControlName="coming" />
+                <span class="rsvp-checkbox-check"></span>
+            </label>
+            <label class="rsvp-form-checkbox-label">Decline with Regret
+                <input value="1" type="radio" class="rsvp-form-checkbox" formControlName="coming" />
+                <span class="rsvp-checkbox-check"></span>
+            </label>
+            <button (click)="submitPartyLeader()" [disabled]="!partyLeaderForm.valid" class="button rsvp-form-button">Continue</button>
+        </div>
     </div>
 </div>
