@@ -60,20 +60,19 @@
   top: -10px;
 }
 
-.couple-picture {
-  background-color: gray;
-  height: 200px;
-  background-size: contain;
+.couple-picture img {
+  height: auto;
+  width: 100%;
 }
 
 .bride-container .square-container.couple-picture {
-  background: url("/assets/images/jordan-toddler.jpg") no-repeat center top;
-  background-size: 100%;
+  //background: url("/assets/images/jordan-toddler.jpg") no-repeat center top;
+  //background-size: 100%;
 }
 
 .groom-container .square-container.couple-picture {
-  background: url("/assets/images/joe-toddler.jpg") no-repeat center top;
-  background-size: 100%;
+  //background: url("/assets/images/joe-toddler.jpg") no-repeat center top;
+  //background-size: 100%;
 }
 
 .couple-picture-right {
@@ -97,7 +96,7 @@
   }
 
   .couple-description h2 {
-    font-size:3em;
+    font-size: 3em;
   }
 
   .bride-container {
@@ -120,7 +119,7 @@
 
   .bride-container .square-container.couple-picture {
     height: auto;
-    background-position:bottom;
+    background-position: bottom;
   }
 
   .groom-container .square-container.couple-picture {

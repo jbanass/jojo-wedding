@@ -78,6 +78,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .registry-container {
+    padding-bottom: 140px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .square-container {
     width: 230px;
     position: initial;
@@ -98,7 +104,7 @@
   .registry-image-container {
     display: -webkit-inline-box;
     position: relative;
-    left: -330px;
+    left: -400px;
     top: 150px;
   }
 
@@ -115,8 +121,8 @@
 
   .pull-right {
     position: relative;
-    left: 130px;
-    top:-50px;
+    left: 200px;
+    top: -50px;
   }
 
   .registry-image-1 {
