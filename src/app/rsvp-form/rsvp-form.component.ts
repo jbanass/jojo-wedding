@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 
 import {
   FormGroup,
@@ -9,6 +9,7 @@ import {
 } from "@angular/forms";
 
 import { RSVPService } from "./rsvp.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "rsvp-form",
@@ -19,23 +20,22 @@ export class RSVPFormComponent implements OnInit {
   validationCode: string = null;
   isValidated: boolean = false;
 
+  currentPerson: Person = new Person();
   personForm: FormGroup;
-  message: string = undefined;
+  modal: ModalData = undefined;
   partyMembers: Array<Person> = new Array<Person>();
+  partySubmitted: boolean = false;
 
-  party: FormGroup;
-  partyList: FormGroup;
-  partyLeaderName: string = undefined;
-  isComing: boolean = undefined;
-  submittedPeople: any[] = [];
-  submitted: boolean = false;
-
-  constructor(private service: RSVPService, private fb: FormBuilder) {
+  constructor(
+    private service: RSVPService,
+    private fb: FormBuilder,
+    private ref: ChangeDetectorRef,
+    private router: Router
+  ) {
     this.personForm = new FormGroup({
       firstName: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
       coming: new FormControl("-1", Validators.required),
-      age: new FormControl("-1", Validators.required),
       food: new FormControl("-1", Validators.required),
       foodNotes: new FormControl("")
     });
@@ -43,12 +43,38 @@ export class RSVPFormComponent implements OnInit {
 
   ngOnInit() {}
 
+  submitPartyMemberNameAndComing() {
+    this.currentPerson.firstName = this.personForm.get("firstName").value;
+    this.currentPerson.lastName = this.personForm.get("lastName").value;
+    this.currentPerson.coming = this.personForm.get("coming").value;
+
+    this.ref.detectChanges();
+
+    if (this.currentPerson.coming === "1") {
+      this.partyMembers.push(this.currentPerson);
+      this.personForm.reset();
+
+      this.modal = {
+        message:
+          "Thank you. " +
+          this.currentPerson.firstName +
+          " " +
+          this.currentPerson.lastName +
+          "'s response is waiting to be sent. Feel free to add more, or tap 'Finish RSVP' to send your responses!",
+        callback: () => {
+          this.modal = undefined;
+        }
+      };
+
+      this.currentPerson = new Person();
+    }
+  }
+
   submitPartyMember() {
     const person: Person = {
       firstName: this.personForm.get("firstName").value,
       lastName: this.personForm.get("lastName").value,
       coming: this.personForm.get("coming").value,
-      age: this.personForm.get("age").value,
       food: this.personForm.get("food").value,
       foodNotes: this.personForm.get("foodNotes").value
     };
@@ -56,36 +82,50 @@ export class RSVPFormComponent implements OnInit {
     this.partyMembers.push(person);
   }
 
-  setPartyLeader(name: string) {
-    this.partyLeaderName = name;
+  submitPartyMemberFoodChoice() {
+    this.currentPerson.food = this.personForm.get("food").value;
+    this.currentPerson.foodNotes = this.personForm.get("foodNotes").value;
+
+    this.partyMembers.push(this.currentPerson);
+    this.personForm.reset();
+
+    this.modal = {
+      message:
+        "Thank you. " +
+        this.currentPerson.firstName +
+        " " +
+        this.currentPerson.lastName +
+        "'s response is waiting to be sent. Feel&nbsp;free to add more, or select 'Finish RSVP' to send your responses!",
+      callback: () => {
+        this.modal = undefined;
+      }
+    };
+
+    this.currentPerson = new Person();
   }
 
-  buildForm() {
-    if (this.partyLeaderName !== null) {
-      console.log("building form", this.submittedPeople);
-      this.isComing = true;
+  finalizeParty() {
+    this.partySubmitted = true;
 
-      this.partyList = this.createPerson(this.submittedPeople.length);
+    if (!this.canShowSongChoice()) {
+      const rsvp: RSVP = {
+        people: this.partyMembers,
+        songName: null,
+        songArtist: null
+      };
+
+      this.saveToDB(rsvp);
     }
   }
 
-  createPerson(index: number) {
-    var name: string = "";
-    var age: string = "-1";
-    var food: string = "-1";
-    var foodNotes: string = "";
+  submitPartySong(songName: string, songArtist: string) {
+    const rsvp: RSVP = {
+      people: this.partyMembers,
+      songName: songName,
+      songArtist: songArtist
+    };
 
-    if (index === 0) {
-      name = this.partyLeaderName;
-      console.log("Hit index 0", name);
-    }
-
-    return new FormGroup({
-      name: new FormControl(name, Validators.required),
-      age: new FormControl(age, Validators.required),
-      food: new FormControl(food, Validators.required),
-      foodNotes: new FormControl(foodNotes)
-    });
+    this.saveToDB(rsvp);
   }
 
   validate(code: string) {
@@ -93,81 +133,82 @@ export class RSVPFormComponent implements OnInit {
       this.isValidated = result;
 
       if (!this.isValidated) {
-        alert("Sorry, " + code + " is not valid.");
+        this.modal = {
+          message: "Sorry, " + code + " is not valid.",
+          callback: () => {
+            this.modal = undefined;
+          }
+        };
       }
     });
   }
 
-  AddGuest() {
-    const person: Person = {
-      firstName: this.partyList.value["firstName"],
-      food: this.partyList.value["food"],
-      age: this.partyList.value["age"],
-      foodNotes: this.partyList.value["foodNotes"]
+  saveToDB(rsvp: RSVP) {
+    this.modal = {
+      message:
+        "Thank you. " +
+        rsvp.people.length +
+        " responses have been saved! We can't wait to see you!",
+      callback: () => {
+        this.endSignUp();
+      }
     };
-
-    this.submittedPeople = [...this.submittedPeople, person];
   }
 
-  saveAndAddGuest() {
-    this.AddGuest();
-    this.buildForm();
+  endSignUp() {
+    this.router.navigate(["/"]);
   }
 
-  submitParty() {
-    if (
-      this.partyList.value["name"] &&
-      this.partyList.value["food"] !== "-1" &&
-      this.partyList.value["age"] !== "-1"
-    ) {
-      this.AddGuest();
+  isPersonEntered(): boolean {
+    return (
+      this.currentPerson.firstName !== undefined &&
+      this.currentPerson.lastName !== undefined &&
+      this.currentPerson.coming !== undefined
+    );
+  }
+
+  canShowSongChoice() {
+    if (this.partySubmitted) {
+      if (this.partyMembers.find((x: Person) => x.coming !== "1")) {
+        return true;
+      }
     }
 
-    this.submitted = true;
+    return false;
   }
 
-  submitSong(song: string) {
-    const rsvp: RSVP = {
-      people: this.submittedPeople,
-      song: song
+  resetEntries() {
+    this.partyMembers = [];
+    this.personForm.reset();
+
+    this.modal = {
+      message: "Your progress has been reset.",
+      callback: () => {
+        this.modal = undefined;
+      }
     };
-
-    console.log(rsvp);
-    this.saveToDB();
-  }
-
-  saveToDB() {
-    alert("Thanks, your info has been saved! We can't wait to see you!");
-  }
-
-  rejectInvite() {
-    this.isComing = false;
-    alert("Thanks " + this.partyLeaderName + " for letting us know!");
-  }
-
-  isAdult() {
-    return this.partyList.value["age"] === "0";
-  }
-
-  isChild() {
-    return this.partyList.value["age"] === "1";
   }
 
   isFoodChecked(value: string) {
-    return this.partyList.value["food"] === value;
+    return this.personForm.value["food"] === value;
   }
 }
 
 class Person {
-  firstName: string;
-  lastName: string;
-  coming: string;
-  age: string;
-  food: string;
-  foodNotes: string;
+  firstName: string = undefined;
+  lastName: string = undefined;
+  coming: string = undefined;
+  food: string = undefined;
+  foodNotes: string = undefined;
 }
 
 class RSVP {
   people: Array<Person>;
-  song: string;
+  songName: string;
+  songArtist: string;
+}
+
+class ModalData {
+  message: string = undefined;
+  callback: Function = undefined;
 }

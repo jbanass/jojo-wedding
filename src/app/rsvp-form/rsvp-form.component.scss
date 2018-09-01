@@ -1,10 +1,18 @@
 @import "../../variables.scss";
 
 .rsvp-form-container {
-  height: 100vh;
+  height: calc(100vh + 60px);
   background: url(/assets/images/festivities-background.jpg);
   background-attachment: fixed;
   background-size: cover;
+}
+
+.rsvp-copy {
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  color: $light-red;
+  font-size: 0.6em;
+  padding-bottom: 15px;
 }
 
 .modal {
@@ -22,11 +30,18 @@
   place-content: center;
 }
 
+.modal-content {
+  display: flex;
+  flex-direction: center;
+  flex-direction: column;
+}
+
 .modal-content p {
-  font-family: WildernessTypeFace;
-  font-size: 3.7em;
-  line-height: 0.9em;
-  margin-bottom: 10px;
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  margin: 30px;
 }
 
 .rsvp-form-image-container {
@@ -152,6 +167,19 @@
   color: $light-red;
   border-color: $light-red;
   margin-left: 0px;
+}
+
+.start-over {
+  border: none;
+  text-decoration: underline;
+  font-family: "mrs-eaves", serif;
+  font-style: italic;
+  text-align: left;
+  padding: 0;
+}
+
+.rsvp-form-button-modal {
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
