@@ -20,7 +20,8 @@
                     <input value="1" type="radio" class="rsvp-form-checkbox" formControlName="coming" />
                     <span class="rsvp-checkbox-check"></span>
                 </label>
-                <button class="button rsvp-form-button" (click)="submitPartyMemberNameAndComing()">Continue</button>
+                <button [disabled]="!personForm.get('firstName').valid || !personForm.get('lastName').valid || !personForm.get('coming').valid"
+                    class="button rsvp-form-button" (click)="submitPartyMemberNameAndComing()">Continue</button>
             </div>
             <div *ngIf="isPersonEntered() && !partySubmitted">
                 <p class="rsvp-copy">Please select your food choice.</p>
@@ -41,7 +42,7 @@
                     <span class="rsvp-checkbox-check"></span>
                 </label>
                 <input formControlName="foodNotes" class="rsvp-form-input" placeholder="Allergy/Dietary Requests" />
-                <button [disabled]="!personForm.valid" class="button rsvp-form-button" (click)="submitPartyMemberFoodChoice()">Continue</button>
+                <button [disabled]="!personForm.get('food').valid" class="button rsvp-form-button" (click)="submitPartyMemberFoodChoice()">Continue</button>
             </div>
             <div *ngIf="canShowSongChoice()">
                 <p class="rsvp-copy">Before you go, what song will get you on the dance floor?</p>
@@ -52,7 +53,7 @@
                 </button>
             </div>
             <div>
-                <button class="button rsvp-form-button" (click)="finalizeParty()" *ngIf="partyMembers.length > 0">Finish
+                <button class="button rsvp-form-button" (click)="finalizeParty()" *ngIf="partyMembers.length > 0 && !partySubmitted">Finish
                     RSVP
                 </button>
                 <button class="button rsvp-form-button start-over" (click)="resetEntries()" *ngIf="partyMembers.length > 0">Start
@@ -61,6 +62,14 @@
             </div>
         </div>
     </div>
+</div>
+<div class="family-message">
+    <h1 class="section-header">We are excited!</h1>
+    <h2>To our family and friends</h2>
+    <p>
+        Thank you to those who have given us nothing but love, support, and encouragement throughout the years. We are excited for
+        our next step in our wonderful adventure together. We are blessed to have you in our lives.
+    </p>
 </div>
 <div class="modal" *ngIf="modal">
     <div class="modal-content">

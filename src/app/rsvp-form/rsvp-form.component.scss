@@ -178,9 +178,59 @@
   padding: 0;
 }
 
+.family-message {
+  background-color: $main-blue;
+  color: $off-white;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.family-message h1 {
+  color: $light-blue;
+  padding-top: 20px;
+}
+
+.family-message h2 {
+  font-family: $all-caps-font-stack;
+  color: $light-blue;
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
+
+.family-message p {
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+
+  font-size: 0.7em;
+  line-height: 1.6em;
+}
+
 .rsvp-form-button-modal {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .rsvp-form-container {
+    height: -webkit-fill-available;
+    margin-top: -10px;
+  }
+
+  .rsvp-form {
+    width: 320px;
+    position: relative;
+    float: right;
+    transform: none;
+    top: 50px;
+    left: -60px;
+  }
+
+  .family-message h2 {
+    font-size: 1.5em;
+  }
+
+  .family-message p {
+  }
 }

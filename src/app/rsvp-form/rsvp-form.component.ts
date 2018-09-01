@@ -10,6 +10,7 @@ import {
 
 import { RSVPService } from "./rsvp.service";
 import { Router } from "@angular/router";
+import { callbackify } from "util";
 
 @Component({
   selector: "rsvp-form",
@@ -33,11 +34,11 @@ export class RSVPFormComponent implements OnInit {
     private router: Router
   ) {
     this.personForm = new FormGroup({
-      firstName: new FormControl("", Validators.required),
-      lastName: new FormControl("", Validators.required),
-      coming: new FormControl("-1", Validators.required),
-      food: new FormControl("-1", Validators.required),
-      foodNotes: new FormControl("")
+      firstName: new FormControl(null, Validators.required),
+      lastName: new FormControl(null, Validators.required),
+      coming: new FormControl(null, Validators.required),
+      food: new FormControl(null, Validators.required),
+      foodNotes: new FormControl(null)
     });
   }
 
@@ -70,17 +71,17 @@ export class RSVPFormComponent implements OnInit {
     }
   }
 
-  submitPartyMember() {
-    const person: Person = {
-      firstName: this.personForm.get("firstName").value,
-      lastName: this.personForm.get("lastName").value,
-      coming: this.personForm.get("coming").value,
-      food: this.personForm.get("food").value,
-      foodNotes: this.personForm.get("foodNotes").value
-    };
+  // submitPartyMember() {
+  //   const person: Person = {
+  //     firstName: this.personForm.get("firstName").value,
+  //     lastName: this.personForm.get("lastName").value,
+  //     coming: this.personForm.get("coming").value,
+  //     food: this.personForm.get("food").value,
+  //     foodNotes: this.personForm.get("foodNotes").value
+  //   };
 
-    this.partyMembers.push(person);
-  }
+  //   this.partyMembers.push(person);
+  // }
 
   submitPartyMemberFoodChoice() {
     this.currentPerson.food = this.personForm.get("food").value;
@@ -95,7 +96,7 @@ export class RSVPFormComponent implements OnInit {
         this.currentPerson.firstName +
         " " +
         this.currentPerson.lastName +
-        "'s response is waiting to be sent. Feel&nbsp;free to add more, or select 'Finish RSVP' to send your responses!",
+        "'s response is waiting to be sent. Feel free to add more, or select 'Finish RSVP' to send your responses!",
       callback: () => {
         this.modal = undefined;
       }
@@ -180,6 +181,8 @@ export class RSVPFormComponent implements OnInit {
   resetEntries() {
     this.partyMembers = [];
     this.personForm.reset();
+    this.partySubmitted = false;
+    this.currentPerson = new Person();
 
     this.modal = {
       message: "Your progress has been reset.",
