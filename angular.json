@@ -26,6 +26,7 @@
               "src/favicon.ico",
               "src/hotel.php",
               "src/food.php",
+              "src/submit.php",
               "src/validator.php",
               "src/registry.php"
             ],

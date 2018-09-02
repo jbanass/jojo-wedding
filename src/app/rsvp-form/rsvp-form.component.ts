@@ -38,13 +38,15 @@ export class RSVPFormComponent implements OnInit {
       lastName: new FormControl(null, Validators.required),
       coming: new FormControl(null, Validators.required),
       food: new FormControl(null, Validators.required),
-      foodNotes: new FormControl(null)
+      foodNotes: new FormControl("")
     });
   }
 
   ngOnInit() {
     this.service.getFood().subscribe((foods: Array<Food>) => {
-      this.foods = foods;
+      this.foods = foods.filter((food: Food) => Number(food.food_id) > 0);
+    }, (error) => {
+      console.log(error);
     });
   }
 
@@ -56,6 +58,8 @@ export class RSVPFormComponent implements OnInit {
     this.ref.detectChanges();
 
     if (this.currentPerson.coming === "1") {
+      this.currentPerson.food = "-1";
+      this.currentPerson.foodNotes = "Not coming";
       this.partyMembers.push(this.currentPerson);
       this.personForm.reset();
 
@@ -141,16 +145,21 @@ export class RSVPFormComponent implements OnInit {
   }
 
   saveToDB(rsvp: RSVP) {
+    console.log(rsvp);
 
-    this.modal = {
-      message:
-        "Thank you. " +
-        rsvp.people.length +
-        " responses have been saved! We can't wait to see you!",
-      callback: () => {
-        this.endSignUp();
-      }
-    };
+    this.service.submit(rsvp).subscribe((result) => {
+      this.modal = {
+        message:
+          "Thank you. " +
+          rsvp.people.length +
+          " responses have been saved! We can't wait to see you!",
+        callback: () => {
+          this.endSignUp();
+        }
+      };
+    }, (error) => {
+      console.log(error);
+    });
   }
 
   endSignUp() {

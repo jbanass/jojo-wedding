@@ -15,7 +15,8 @@ export class HotelComponent implements OnInit {
 
     ngOnInit() {
         this.service.getHotelInformation().subscribe((hotel: Hotel) => {
-            this.hotel = hotel;
+            console.log(hotel);
+            this.hotel = hotel[0];
         });
     }
 }

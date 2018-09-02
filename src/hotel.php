@@ -10,7 +10,7 @@
 
         $conn = null;
 
-        echo '<pre>'; print_r($rows); echo '</pre>';
+        print json_encode($rows);
      } catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br />";
         die();
