@@ -26,20 +26,9 @@
                 </div>
                 <div *ngIf="isPersonEntered() && !partySubmitted">
                     <p class="rsvp-copy">Please select your food choice.</p>
-                    <label class="rsvp-form-checkbox-label">Beef Tenderloin
-                        <input value="0" type="radio" class="rsvp-form-checkbox" formControlName="food" />
-                        <span class="rsvp-checkbox-check"></span>
-                    </label>
-                    <label class="rsvp-form-checkbox-label">Chicken Romano
-                        <input value="1" type="radio" class="rsvp-form-checkbox" formControlName="food" />
-                        <span class="rsvp-checkbox-check"></span>
-                    </label>
-                    <label class="rsvp-form-checkbox-label">Chicken Tenders (kids only)
-                        <input value="3" type="radio" class="rsvp-form-checkbox" formControlName="food" />
-                        <span class="rsvp-checkbox-check"></span>
-                    </label>
-                    <label class="rsvp-form-checkbox-label">Vegetarian
-                        <input value="2" type="radio" class="rsvp-form-checkbox" formControlName="food" />
+                    <label *ngFor="let food of foods" class="rsvp-form-checkbox-label">
+                        {{food.food_name}}
+                        <input value="{{food.food_id}}" type="radio" class="rsvp-form-checkbox" formControlName="food" />
                         <span class="rsvp-checkbox-check"></span>
                     </label>
                     <input formControlName="foodNotes" class="rsvp-form-input" placeholder="Allergy/Dietary Requests" />

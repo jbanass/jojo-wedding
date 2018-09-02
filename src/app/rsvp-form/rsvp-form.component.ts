@@ -8,7 +8,7 @@ import {
   Validators
 } from "@angular/forms";
 
-import { RSVPService, RSVP, Person } from "./rsvp.service";
+import { RSVPService, RSVP, Person, Food } from "./rsvp.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -25,6 +25,7 @@ export class RSVPFormComponent implements OnInit {
   modal: ModalData = undefined;
   partyMembers: Array<Person> = new Array<Person>();
   partySubmitted: boolean = false;
+  foods: Array<Food>;
 
   constructor(
     private service: RSVPService,
@@ -41,7 +42,11 @@ export class RSVPFormComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.service.getFood().subscribe((foods: Array<Food>) => {
+      this.foods = foods;
+    });
+  }
 
   submitPartyMemberNameAndComing() {
     this.currentPerson.firstName = this.personForm.get("firstName").value;

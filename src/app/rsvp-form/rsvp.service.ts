@@ -13,6 +13,10 @@ export class RSVPService {
 
     return this.http.get<boolean>("validator.php", { params: params });
   }
+
+  getFood(): Observable<Array<Food>> {
+    return this.http.get<Array<Food>>("food.php");
+  }
 }
 
 export class Food {
