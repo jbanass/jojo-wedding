@@ -1,29 +1,18 @@
 <?php
-    $servername = "localhost";
-    $username = "user";
-    $password = "pass";
-    $database = "jojowedding";
+    try {
+        $conn = new PDO('mysql:dbname=jojowedding;host=localhost;', 'user', 'pass');
+        $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $conn = mysqli_connect($servername, $username, $password, $database);
+        $rows = array();
+        foreach ($conn->query("SELECT * FROM registry") as $row) {
+                $rows[] = $row;
+        }
 
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+        $conn = null;
 
-    $post_data = array();
-
-    if ($result = $conn->query("SELECT * FROM `registry`")) {
-            while ($row = $result->fetch_assoc()) {
-                $post_data[$row['reg_id']] = array();
-                $post_data[$row['reg_id']]['reg_id'] = $row['reg_id'];
-                $post_data[$row['reg_id']]['reg_url'] = $row['reg_url'];
-                $post_data[$row['reg_id']]['reg_icon'] = $row['reg_icon'];
-            }
-            $result->close();
-            $conn->close();
-
-            echo json_encode($post_data);
-        } else {
-        http_response_code(400);
+        echo '<pre>'; print_r($rows); echo '</pre>';
+     } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br />";
+        die();
     }
 ?>

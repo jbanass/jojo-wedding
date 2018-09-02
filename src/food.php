@@ -1,26 +1,19 @@
 <?php
-$servername = "localhost";
-$username = "user";
-$password = "pass";
-$database = "jojowedding";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-if ($result = $conn->query("SELECT * FROM food")) {
-
+try {
+    $conn = new PDO('mysql:dbname=jojowedding;host=localhost;', 'user', 'pass');
+    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $rows = array();
-
-    while ($row = $result->fetch_assoc()) {
-        $rows[] = $row;
+    foreach ($conn->query("SELECT * FROM food") as $row) {
+            $rows[] = $row;
     }
-    $result->close();
-    $conn->close();
 
-    ECHO json_encode($rows);
+    $conn = null;
+
+    echo '<pre>'; print_r($rows); echo '</pre>';
+ } catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br />";
+    die();
 }
 
 ?>
