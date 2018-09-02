@@ -6,14 +6,32 @@ import { of, Observable } from "rxjs";
 
 @Injectable()
 export class RSVPService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  submitRSVP(code: string) {
-    return Observable.create(observer => {
-      observer.next(code === "hello");
-    });
-    // var params: HttpParams = new HttpParams().append("code", code);
+  validateCode(code: string): Observable<boolean> {
+    var params: HttpParams = new HttpParams().append("code", code);
 
-    // return this.http.get("rsvp.php", { params: params, responseType: "text" });
+    return this.http.get<boolean>("validator.php", { params: params });
   }
+}
+
+export class Food {
+  food_id: string;
+  food_name: string;
+  food_description: string;
+}
+
+export class Person {
+  firstName: string = undefined;
+  lastName: string = undefined;
+  coming: string = undefined;
+  food: string = undefined;
+  foodNotes: string = undefined;
+}
+
+export class RSVP {
+  people: Array<Person>;
+  songName: string;
+  songArtist: string;
+  validationCode: string;
 }

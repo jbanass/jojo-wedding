@@ -12,25 +12,25 @@
         <div class="hotel-info-container">
             <div class="hotel-info">
                 <div class="square-container">
-                    <p>Hotel</p>
-                    <p>{{hotel?.hot_name}}</p>
+                    <p class="hotel-title">Hotel</p>
+                    <p class="hotel-subtitle">{{hotel?.hot_name}}</p>
                     <br />
-                    <p>{{hotel?.hot_address_1}}</p>
-                    <p>{{hotel?.hot_city}} {{hotel?.hot_state}} {{hotel?.hot_zip}}</p>
+                    <p class="hotel-copy">{{hotel?.hot_address_1}}</p>
+                    <p class="hotel-copy">{{hotel?.hot_city}} {{hotel?.hot_state}} {{hotel?.hot_zip}}</p>
                 </div>
                 <hr class="half-hr" />
                 <div class="square-container">
-                    <p>Book</p>
-                    <i>Online</i>
+                    <p class="hotel-title">Book</p>
+                    <p class="hotel-subtitle">Online</p>
                     <a href="{{hotel?.hot_url}}" target="_blank" class="button hotel-button">Reserve Room</a>
                 </div>
                 <hr class="half-hr" />
                 <div class="square-container">
-                    <p>Book by</p>
-                    <p>Phone</p>
+                    <p class="hotel-title">Book by</p>
+                    <p class="hotel-subtitle">Phone</p>
                     <br />
-                    <p>{{hotel?.hot_phone}}</p>
-                    <p>Donnellan/Banass Wedding</p>
+                    <p class="hotel-copy">{{hotel?.hot_phone}}</p>
+                    <p class="hotel-copy">Donnellan/Banass Wedding</p>
                 </div>
             </div>
         </div>

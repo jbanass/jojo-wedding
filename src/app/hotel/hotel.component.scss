@@ -7,13 +7,30 @@
   transform: translate(-50%, 0);
   background-color: transparent;
   margin: 5px;
+  padding-bottom:10px;
 }
 
 .hotel-container {
-  background-color: #d3d3d3;
+  background: url("/assets/images/floral-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
   height: auto;
   padding-bottom: 40px;
   text-align: center;
+}
+
+.hotel-title {
+  font-family: $all-caps-font-stack;
+  font-size:1em;
+}
+
+.hotel-subtitle {
+  font-family: $copy-font-stack;
+  font-style: $copy-font-style;
+}
+
+.hotel-copy {
+  font-size:.5em;
 }
 
 .hotel-header-container {
@@ -56,6 +73,7 @@
 
 .hotel-button {
   border: 4px double $light-red;
+  color:$light-red;
 }
 
 @media screen and (min-width: 768px) {
@@ -63,6 +81,7 @@
     display: inline-block;
     left: 0;
     transform: none;
+    padding-bottom:none;
   }
 
   .half-hr {

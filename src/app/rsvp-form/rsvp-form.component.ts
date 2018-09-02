@@ -8,7 +8,7 @@ import {
   Validators
 } from "@angular/forms";
 
-import { RSVPService } from "./rsvp.service";
+import { RSVPService, RSVP, Person } from "./rsvp.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -41,7 +41,7 @@ export class RSVPFormComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   submitPartyMemberNameAndComing() {
     this.currentPerson.firstName = this.personForm.get("firstName").value;
@@ -69,18 +69,6 @@ export class RSVPFormComponent implements OnInit {
       this.currentPerson = new Person();
     }
   }
-
-  // submitPartyMember() {
-  //   const person: Person = {
-  //     firstName: this.personForm.get("firstName").value,
-  //     lastName: this.personForm.get("lastName").value,
-  //     coming: this.personForm.get("coming").value,
-  //     food: this.personForm.get("food").value,
-  //     foodNotes: this.personForm.get("foodNotes").value
-  //   };
-
-  //   this.partyMembers.push(person);
-  // }
 
   submitPartyMemberFoodChoice() {
     this.currentPerson.food = this.personForm.get("food").value;
@@ -111,7 +99,8 @@ export class RSVPFormComponent implements OnInit {
       const rsvp: RSVP = {
         people: this.partyMembers,
         songName: null,
-        songArtist: null
+        songArtist: null,
+        validationCode: this.validationCode
       };
 
       this.saveToDB(rsvp);
@@ -122,14 +111,15 @@ export class RSVPFormComponent implements OnInit {
     const rsvp: RSVP = {
       people: this.partyMembers,
       songName: songName,
-      songArtist: songArtist
+      songArtist: songArtist,
+      validationCode: this.validationCode
     };
 
     this.saveToDB(rsvp);
   }
 
   validate(code: string) {
-    this.service.submitRSVP(code).subscribe((result: boolean) => {
+    this.service.validateCode(code).subscribe((result: boolean) => {
       this.isValidated = result;
 
       if (!this.isValidated) {
@@ -139,11 +129,14 @@ export class RSVPFormComponent implements OnInit {
             this.modal = undefined;
           }
         };
+      } else {
+        this.validationCode = code;
       }
     });
   }
 
   saveToDB(rsvp: RSVP) {
+
     this.modal = {
       message:
         "Thank you. " +
@@ -194,20 +187,6 @@ export class RSVPFormComponent implements OnInit {
   isFoodChecked(value: string) {
     return this.personForm.value["food"] === value;
   }
-}
-
-class Person {
-  firstName: string = undefined;
-  lastName: string = undefined;
-  coming: string = undefined;
-  food: string = undefined;
-  foodNotes: string = undefined;
-}
-
-class RSVP {
-  people: Array<Person>;
-  songName: string;
-  songArtist: string;
 }
 
 class ModalData {

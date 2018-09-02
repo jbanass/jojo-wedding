@@ -2,7 +2,9 @@
 
 .our-story-container {
   height: auto;
-  background-color: gray;
+  background: url("/assets/images/floral-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .our-story-header {

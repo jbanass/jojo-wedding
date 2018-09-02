@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "F:\\xampp\\htdocs\\",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.json",
@@ -25,7 +25,7 @@
               "src/assets",
               "src/favicon.ico",
               "src/hotel.php",
-              "src/rsvp.php",
+              "src/validator.php",
               "src/registry.php"
             ],
             "styles": [
