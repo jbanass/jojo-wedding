@@ -1,6 +1,10 @@
 <div class="mobile-nav-container">
     <div class="mobile-nav">
-        <ion-icon (click)="toggleNavDrawer()" name="menu"></ion-icon>
+        <div [class.open]="!isClosed" (click)="toggleNavDrawer()" id="nav-icon4">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
     <div [hidden]="isClosed" class="mobile-nav-menu">
         <div class="mobile-menu">
