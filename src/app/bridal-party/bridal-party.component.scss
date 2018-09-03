@@ -85,6 +85,73 @@
   }
 }
 
+@keyframes slideIn { 
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1
+    }
+}
+
+.slideIn {
+  animation: slideIn 1s linear;
+  animation-fill-mode: both;
+}
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(1),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(1) { 
+  animation-delay: .5s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(2),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(2) { 
+  animation-delay: 1s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(3),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(3) { 
+  animation-delay: 1.5s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(4),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(4) { 
+  animation-delay: 2s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(5),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(5) { 
+  animation-delay: 2.5s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(6),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(6) { 
+  animation-delay: 3s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(7),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(7) { 
+  animation-delay: 3.5s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(8),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(8) { 
+  animation-delay: 4s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(9),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(9) { 
+  animation-delay: 4.5s
+ }
+
+.bridesmaid-list .bridesmaid-container.slideIn:nth-child(10),
+.groomsmen-list .groomsmen-container.slideIn:nth-child(10) { 
+  animation-delay: 5s
+ }
+
 @media screen and (min-width: 1024px) {
   .bridesmaid-container h2,
   .groomsmen-container h2 {
