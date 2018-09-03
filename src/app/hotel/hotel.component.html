@@ -1,31 +1,31 @@
-<div class="section hotel-container">
+<div #hotelcontainer class="section hotel-container">
     <div class="hotel-header-container">
         <h1 class="section-header hotel-header">
             Hotel &amp; Travel
         </h1>
     </div>
-    <div class="hotel-description-container">
+    <div [class.slideIn]="hotelcontainerInView" class="hotel-description-container">
         <div class="hotel-description">
             <p>For your convienence, a preferred rate is available the weekend of our wedding, November 16th - November 18th.
             </p>
         </div>
         <div class="hotel-info-container">
-            <div class="hotel-info">
-                <div class="square-container">
+            <div #hotelinfo class="hotel-info">
+                <div [class.slideIn]="hotelinfoInView" class="square-container">
                     <p class="hotel-title">Hotel</p>
                     <p class="hotel-subtitle">{{hotel?.hot_name}}</p>
                     <br />
                     <p class="hotel-copy">{{hotel?.hot_address_1}}</p>
                     <p class="hotel-copy">{{hotel?.hot_city}} {{hotel?.hot_state}} {{hotel?.hot_zip}}</p>
                 </div>
-                <hr class="half-hr" />
-                <div class="square-container">
+                <hr [class.slideIn]="hotelinfoInView" class="half-hr" />
+                <div [class.slideIn]="hotelinfoInView" class="square-container">
                     <p class="hotel-title">Book</p>
                     <p class="hotel-subtitle">Online</p>
                     <a href="{{hotel?.hot_url}}" target="_blank" class="button hotel-button">Reserve Room</a>
                 </div>
-                <hr class="half-hr" />
-                <div class="square-container">
+                <hr [class.slideIn]="hotelinfoInView" class="half-hr" />
+                <div [class.slideIn]="hotelinfoInView" class="square-container">
                     <p class="hotel-title">Book by</p>
                     <p class="hotel-subtitle">Phone</p>
                     <br />

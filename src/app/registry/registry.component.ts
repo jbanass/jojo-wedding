@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Subscription, fromEvent } from 'rxjs';
 import { RegistryService, Registry } from './registry.service';
 
 @Component({
@@ -12,6 +12,33 @@ export class RegistryComponent implements OnInit {
 
     constructor(private service: RegistryService) {
 
+    }
+
+    @ViewChild('registry') registryElement: ElementRef;
+    registryElementIsInView: boolean = false;
+
+
+    scrollPos: number;
+    windowHeight: number;
+
+    subscriptionScroll: Subscription;
+
+    ngAfterViewInit() {
+        this.subscriptionScroll = fromEvent(window, 'scroll').subscribe(() => this.onScroll());
+    }
+
+    checkVisibility() {
+        if (this.scrollPos >= (<HTMLDivElement>this.registryElement.nativeElement).getBoundingClientRect().top) {
+            if (this.registryElementIsInView !== true) {
+                this.registryElementIsInView = true;
+            }
+        }
+    }
+
+    onScroll() {
+        this.scrollPos = window.scrollY;
+        this.windowHeight = window.innerHeight;
+        this.checkVisibility();
     }
 
     ngOnInit() {

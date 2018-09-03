@@ -20,24 +20,18 @@ export class BridalPartyComponent {
 
     ngAfterViewInit() {
         this.subscriptionScroll = fromEvent(window, 'scroll').subscribe(() => this.onScroll());
-        console.log(this.bridesmaids.nativeElement.getBoundingClientRect())
-        console.log(this.groomsmen.nativeElement.getBoundingClientRect())
         this.scrollPos;
     }
 
     checkVisibility() {
-        console.log(this.scrollPos);
-        console.log("bridesmaid height", this.bridesmaids.nativeElement.getBoundingClientRect());
         if ((<HTMLDivElement>this.bridesmaids.nativeElement).getBoundingClientRect().top < 1000) {
             if (!this.bridesmaidsInView) {
-                console.log("bridesmaid in view", this.scrollPos)
                 this.bridesmaidsInView = true;
             }
         }
 
         if ((<HTMLDivElement>this.groomsmen.nativeElement).getBoundingClientRect().top < 1000) {
             if (!this.groomsmenInView) {
-                console.log("groomsmen in view", this.scrollPos)
                 this.groomsmenInView = true;
             }
         }

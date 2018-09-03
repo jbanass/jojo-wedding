@@ -48,6 +48,7 @@ export class RSVPFormComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
+    window.scrollTo(0, 0);
   }
 
   submitPartyMemberNameAndComing() {
@@ -145,8 +146,6 @@ export class RSVPFormComponent implements OnInit {
   }
 
   saveToDB(rsvp: RSVP) {
-    console.log(rsvp);
-
     this.service.submit(rsvp).subscribe((result) => {
       this.modal = {
         message:

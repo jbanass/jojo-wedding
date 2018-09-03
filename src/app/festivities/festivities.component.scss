@@ -50,6 +50,28 @@
 }
 
 .festivities-square-container {
+
+}
+
+@keyframes slideIn { 
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+
+.slideIn {
+animation: slideIn 1s ease-in-out;
+animation-fill-mode: both;
+}
+
+.festivities-square-container .slideIn { 
+animation-delay: .5s
 }
 
 @media screen and (min-width: 768px) {
