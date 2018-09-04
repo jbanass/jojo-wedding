@@ -2,7 +2,7 @@
     <div class="our-story-header-container">
         <h1 class="section-header our-story-header">Our Story</h1>
     </div>
-    <div class="our-story" [ngSwitch]="storyIndex">
+    <div #ourstory class="our-story" [ngSwitch]="storyIndex">
         <div *ngFor="let story of stories; let i = index">
             <div *ngSwitchCase="i">
                 <div class="our-story-subsection-header">
