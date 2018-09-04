@@ -8,17 +8,30 @@ import { Subscription, Observable, fromEvent } from "rxjs";
   styleUrls: ["./bride-groom.component.scss"]
 })
 export class BrideGroomComponent {
+  @ViewChild('bridegroom') brideGroom: ElementRef;
+  brideGroomInView: boolean = false;
 
   scrollPos: number;
   windowHeight: number;
 
   subscriptionScroll: Subscription;
 
-  constructor(private ref: ChangeDetectorRef) {
-
-  }
-
   ngAfterViewInit() {
-    
-  }
+        this.subscriptionScroll = fromEvent(window, 'scroll').subscribe(() => this.onScroll());
+        this.scrollPos;
+    }
+
+    checkVisibility() {
+        if (this.scrollPos >= (<HTMLDivElement>this.brideGroom.nativeElement).getBoundingClientRect().top) {
+            if (!this.brideGroomInView) {
+                this.brideGroomInView = true;
+            }
+        }
+    }
+
+    onScroll() {
+        this.scrollPos = window.scrollY;
+        this.windowHeight = window.innerHeight;
+        this.checkVisibility();
+    }
 }
