@@ -1,31 +1,9 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { trigger, state, style, animate, transition, stagger, query } from '@angular/animations';
-import { Subscription, Observable, fromEvent } from "rxjs";
 
 @Component({
     selector: 'our-story',
     templateUrl: './our-story.component.html',
-    styleUrls: ['./our-story.component.scss'],
-    animations: [
-        trigger('listAnimation', [
-            state('visible', style({
-                transform: 'translateX(0)',
-                position: 'initial',
-                opacity: 1
-            })),
-            state('invisible', style({
-                transform: 'translateX(-900%)',
-                position: 'absolute',
-                opacity: 0
-            })),
-            transition("invisible => visible", [
-                animate('2s 1s ease-out')
-            ]),
-            transition("visible => invisible", [
-                animate('2s 1s ease-out')
-            ])
-        ])
-    ]
+    styleUrls: ['./our-story.component.scss']
 })
 export class OurStoryComponent {
     storyIndex: number = 0;
