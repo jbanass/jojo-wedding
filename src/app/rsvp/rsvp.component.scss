@@ -7,7 +7,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  background-color: #3a1b23;
+  background-color: $main-red;
   padding: 3px;
   text-align: center;
 }
@@ -33,8 +33,8 @@
   -webkit-appearance: none;
   border: none;
   background-color: transparent;
-  color: #eae9e4;
-  border-bottom: 1px solid #eae9e4;
+  color: $off-white;
+  border-bottom: 1px solid $off-white;
   width: 60%;
   padding-bottom: 5px;
   outline: none;

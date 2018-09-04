@@ -84,6 +84,10 @@ export class RSVPFormComponent implements OnInit {
     this.currentPerson.food = this.personForm.get("food").value;
     this.currentPerson.foodNotes = this.personForm.get("foodNotes").value;
 
+    if (this.currentPerson.foodNotes === null) {
+      this.currentPerson.foodNotes = "No notes added";
+    }
+
     this.partyMembers.push(this.currentPerson);
     this.personForm.reset();
 
@@ -151,7 +155,7 @@ export class RSVPFormComponent implements OnInit {
         message:
           "Thank you. " +
           rsvp.people.length +
-          " responses have been saved! We can't wait to see you!",
+          " response(s) have been saved! We can't wait to see you!",
         callback: () => {
           this.endSignUp();
         }
