@@ -26,7 +26,7 @@
 .couple-description {
   background-color: $main-red;
   height: auto;
-  padding: 10px 30px 20px 30px;
+  padding: 25px 30px 35px 30px;
 }
 
 .couple-description h2 {
@@ -50,9 +50,8 @@
 }
 
 .couple-description ul li {
-  font-size: 0.6em;
+  font-size: 0.7em;
   font-style: italic;
-  letter-spacing: 0.05em;
 }
 
 .couple-description-right {
@@ -99,6 +98,16 @@
     font-size: 3em;
   }
 
+  .couple-description p {
+    font-size: .9em;
+    line-height: 1em;
+  }
+
+  .couple-description ul li {
+    font-size: .8em;
+    line-height: 1.2em;
+  }
+
   .bride-container {
     display: inline-flex;
     flex-direction: row-reverse;
@@ -123,5 +132,19 @@
 
   .groom-container .square-container.couple-picture {
     align-self: flex-start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .couple-container{
+    width: 70vw;
+  }
+
+  .couple-description {
+    padding: 25px 50px 35px 50px;
+  }
+
+  .bride-groom-container {
+    padding-bottom: 75px;
   }
 }

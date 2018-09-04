@@ -11,7 +11,7 @@
 .nav-container,
 .mobile-nav-container {
   font-family: $all-caps-font-stack;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.03em;
 }
 
 .mobile-nav-menu {
@@ -74,12 +74,13 @@
   position: absolute;
   left: 40px;
   margin-top: 18px;
+  letter-spacing: 0;
 }
 
 .mobile-menu .nav-menu-jordan-joseph {
   display: inline-block;
   font-family: WildernessTypeFace;
-  font-size: 1.6em;
+  font-size: 2.5em;
   margin-bottom: 30px;
   position: initial;
   left: 0;
@@ -168,6 +169,16 @@
   width:129%;
 }
 
+@media only screen and (min-width: 768px) {
+  .mobile-menu .nav-menu-jordan-joseph {
+    font-size: 3em;
+  }
+
+  .mobile-menu-option {
+    font-size: 1.3em;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .mobile-nav {
     display: none;
@@ -188,15 +199,17 @@
   }
 
   .nav-menu-jordan-joseph {
-    font-size: 1em;
+    font-size: 1.5em;
+    margin-top: 10px;
   }
 
   .nav-menu-option {
-    font-size:.45em;
-    margin: 33px 10px 17px 10px
+    font-size:.6em;
+    margin: 27px 10px 17px 10px
   }
 
   .nav-menu-rsvp {
-    font-size:.45em;
+    font-size:.6em;
+    margin-top: 18px;
   }
 }

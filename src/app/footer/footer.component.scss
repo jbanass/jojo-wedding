@@ -2,7 +2,7 @@
 
 .footer-container {
   text-align: center;
-  padding: 20px 0px;
+  padding: 20px 20px;
   background-color: $dark-blue;
   position: sticky;
   bottom: 0;
@@ -10,9 +10,19 @@
 }
 
 .footer {
-  font-size: 0.3em;
+  font-family: $all-caps-font-stack;
+  font-size: 0.5em;
+  letter-spacing: 0.05em;
+  line-height: 1.1em;
 }
 
 .footer-slash {
   color: $light-red;
+}
+
+@media screen and (min-width: 768px) {
+.footer {
+  font-size: .6em;
+  letter-spacing: .07em;
+}
 }

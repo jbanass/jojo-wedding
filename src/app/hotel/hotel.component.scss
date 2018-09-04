@@ -30,7 +30,7 @@
 }
 
 .hotel-copy {
-  font-size:.5em;
+  font-size:.8em;
 }
 
 .hotel-header-container {
@@ -38,8 +38,7 @@
 
 .hotel-header {
   text-align: center;
-  padding: 50px 0px;
-  width: 100vw;
+  padding: 50px 0 0 0;
   color: $off-white;
 }
 
@@ -49,13 +48,14 @@
 .hotel-description {
   font-family: $copy-font-stack;
   font-style: $copy-font-style;
-  font-size: 0.7em;
   width: 87.5%;
   margin: 0 auto;
 }
 
 .hotel-description p {
   margin: 10px;
+  font-size: 0.7em;
+  line-height: 1.1em;
 }
 
 .hotel-info-container {
@@ -120,6 +120,14 @@ animation-delay: 2.5s
     padding-bottom:none;
   }
 
+  .hotel-description p {
+    font-size: .8em;
+  }
+
+  .hotel-info {
+    padding: 30px 0;
+  }
+
   .half-hr {
     display: inline-block;
     width: 2px;
@@ -127,4 +135,16 @@ animation-delay: 2.5s
     position: relative;
     top: 35px;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .hotel-container {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (min-width: 1024) {
+  .hotel-info{
+    padding-bottom: 75px;
+}
 }

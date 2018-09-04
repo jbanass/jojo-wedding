@@ -163,7 +163,7 @@
 
 .rsvp-form-button {
   background-color: transparent;
-  font-family: $all-caps-font-stack;
+  font-family: $copy-font-stack;
   color: $light-red;
   border-color: $light-red;
   margin-left: 0px;
@@ -181,6 +181,7 @@
 .family-message {
   background-color: $main-blue;
   color: $off-white;
+  font-family: $all-caps-font-stack;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 40px;

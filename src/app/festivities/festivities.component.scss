@@ -6,7 +6,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   background-color: $main-red;
-  padding: 3px 3px 20px 3px;
+  padding: 3px 5px 20px 5px;
   text-align: center;
   top: -65px;
 }
@@ -14,14 +14,14 @@
 .festivities-subheader {
   font-family: $all-caps-font-stack;
   letter-spacing: $all-caps-letter-spacing;
-  font-size: 0.7em;
+  font-size: 0.85em;
 }
 
 .festivities-copy {
   font-family: $copy-font-stack;
   font-style: $copy-font-style;
-  font-size: 0.6em;
-  line-height: 1.4em;
+  font-size: 0.7em;
+  line-height: 1.1em;
 }
 
 .half-hr {
@@ -80,7 +80,7 @@ animation-delay: .5s
     padding: 40px;
     background-image: url("/assets/images/festivities-background.jpg");
     background-size: cover;
-    height: 600px;
+    height: 675px;
     text-align: -webkit-center;
   }
 
@@ -92,8 +92,8 @@ animation-delay: .5s
 
   .square-container {
     width: 480px;
-    height: 480px;
-    margin: 25px 30px 0px -130px;
+    height: 535px;
+    margin: 25px 30px 25px -130px;
     position: inherit;
     -webkit-transform: none;
     transform: none;
@@ -109,6 +109,10 @@ animation-delay: .5s
 
   .festivities-header {
     padding: 0;
+  }
+
+  .festivities-copy {
+    font-size: .8em;
   }
 }
 

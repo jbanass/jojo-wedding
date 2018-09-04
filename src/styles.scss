@@ -170,7 +170,7 @@ ul {
 }
 
 .button {
-  padding: 20px;
+  padding: 15px;
   display: inline-block;
   border: 4px double $off-white;
   margin: 20px 20px 5px 20px;
@@ -183,5 +183,10 @@ ul {
 @media screen and (min-width: 768px) {
   .section-header {
     font-size: 5em;
+  }
+
+  .button {
+    font-size: .7em;
+    padding: 15px 8px;
   }
 }

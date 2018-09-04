@@ -8,7 +8,7 @@
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   background-color: $main-red;
-  padding: 3px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -23,7 +23,7 @@
 
 .rsvp-info {
   position: relative;
-  top: -20px;
+  top: -65px;
 }
 
 .rsvp-input {
@@ -68,7 +68,17 @@
   .rsvp-info {
     position: relative;
     top: -60px;
-    margin-left: -100px;
+    margin-left: -50px;
     height: 375px;
+  }
+
+  .rsvp-respond-by {
+    font-size: .8em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rsvp-info {
+    margin-left: -190px;
   }
 }

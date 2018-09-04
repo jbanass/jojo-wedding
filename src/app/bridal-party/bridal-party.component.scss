@@ -47,16 +47,17 @@
 .bridesmaid-container h2,
 .groomsmen-container h2 {
   font-family: $all-caps-font-stack;
-  font-size: 0.7em;
+  font-size: 0.9em;
   letter-spacing: $all-caps-letter-spacing;
+  line-height: .8em;
 }
 
 .bridesmaid-container h3,
 .groomsmen-container h3 {
-  font-size: 0.6em;
+  font-size: 0.7em;
   font-family: $copy-font-stack;
   font-style: $copy-font-style;
-  letter-spacing: 0.05em;
+  padding-top: 5px;
 }
 
 .groomsmen-container {
@@ -68,10 +69,23 @@
 }
 
 @media screen and (min-width: 768px) {
+  .bridal-party-container {
+    padding-bottom: 65px;
+  }
   .bridesmaids-list-container,
   .groomsmen-list-container {
     width: 93%;
     max-width: 1200px;
+  }
+
+  .bridesmaid-container h2,
+  .groomsmen-container h2 {
+    font-size: .8em;
+  }
+
+  .bridesmaid-container h3,
+  .groomsmen-container h3 {
+  font-size: .6em;
   }
 
   .bridesmaid-container {
