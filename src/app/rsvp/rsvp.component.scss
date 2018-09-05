@@ -18,7 +18,9 @@
   background-size: cover;
   text-align: center;
   height: auto;
+  padding: 40px 20%;
   padding-bottom: 40px;
+  
 }
 
 .rsvp-info {
@@ -57,18 +59,22 @@
 
 @media screen and (min-width: 768px) {
   .rsvp-container {
-    height: 390px;
+    height: 500px;
     background-position-x: -40px;
   }
 
   .square-container {
-    width: 500px;
+    width: 480px;
+    height: 540px;
+    position: inherit;
+    -webkit-transform: none;
+    transform: none;
+    background-color: #4C121D;
+    text-align: center;
+    top: 0;
   }
 
   .rsvp-info {
-    position: relative;
-    top: -60px;
-    margin-left: -50px;
     height: 375px;
   }
 
@@ -78,7 +84,5 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .rsvp-info {
-    margin-left: -190px;
-  }
+
 }

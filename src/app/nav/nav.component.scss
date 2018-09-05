@@ -90,17 +90,19 @@
 .nav-menu-rsvp {
   font-size: 0.7em;
   display: inline-block;
-  border: 1px solid $off-white;
+  border: 1px solid $light-blue;
   padding: 10px 40px;
   position: absolute;
   right: 30px;
   margin-top: 22px;
+  color: $light-blue;
 }
 
 .mobile-nav-menu-rsvp {
-  border: 1px solid $off-white;
+  border: 1px solid $light-blue;
   padding: 10px 80px;
   display: inline-block;
+  color: $light-blue;
 }
 
 * {
