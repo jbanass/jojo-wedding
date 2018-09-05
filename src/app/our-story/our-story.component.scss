@@ -73,7 +73,7 @@
   font-family: $copy-font-stack;
   font-style: $copy-font-style;
   line-height: 1.2em;
-  text-align: left;
+  text-align: center;
 }
 
 @keyframes fadeIn { 
@@ -94,7 +94,6 @@ animation-fill-mode: both;
 @media screen and (min-width: 768px) {
   .our-story-subsection-description {
     font-size: .8em;
-    text-align: center;
   }
 }
 

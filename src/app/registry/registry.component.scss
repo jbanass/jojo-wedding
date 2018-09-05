@@ -30,12 +30,10 @@
 
 .target {
   width: 200px;
-  margin:auto;
 }
 
 .bbb {
   width: 200px;
-  margin:auto;
 }
 
 .registry-header {
@@ -133,6 +131,16 @@ animation-delay: 1.5s
     left:initial;
     transform:initial;
     margin: 0 auto;
+  }
+
+  .target {
+    width: 200px;
+    margin:auto;
+  }
+  
+  .bbb {
+    width: 200px;
+    margin:auto;
   }
 }
 
