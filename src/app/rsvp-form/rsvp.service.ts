@@ -42,6 +42,9 @@ export class Person {
 
 export class RSVP {
   people: Array<Person>;
+  firstName: string;
+  lastName: string;
+  amtComing: number;
   songName: string;
   songArtist: string;
   validationCode: string;

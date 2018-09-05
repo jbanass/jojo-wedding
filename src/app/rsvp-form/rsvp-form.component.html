@@ -43,7 +43,7 @@
                     </button>
                 </div>
                 <div>
-                    <button class="button rsvp-form-button" (click)="finalizeParty()" *ngIf="partyMembers.length > 0 && !partySubmitted">Finish
+                    <button class="button rsvp-form-button" (click)="finalizeParty()" *ngIf="partyMembers.length > 0 && !partySubmitted && personForm.pristine">Finish
                         RSVP
                     </button>
                     <button class="button rsvp-form-button start-over" (click)="resetEntries()" *ngIf="partyMembers.length > 0">Start

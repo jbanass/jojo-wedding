@@ -109,16 +109,12 @@ export class RSVPFormComponent implements OnInit {
   finalizeParty() {
     this.partySubmitted = true;
 
-    if (this.personForm.dirty) {
-      //save whatever we have
-      this.currentPerson.firstName = this.personForm.get('firstName').value;
-      this.currentPerson.lastName = this.personForm.get('lastName').value;
-      //this.
-    }
-
     if (!this.canShowSongChoice()) {
       const rsvp: RSVP = {
         people: this.partyMembers,
+        firstName: this.partyMembers[0].firstName,
+        lastName: this.partyMembers[0].lastName,
+        amtComing: this.partyMembers.length,
         songName: null,
         songArtist: null,
         validationCode: this.validationCode
@@ -131,6 +127,9 @@ export class RSVPFormComponent implements OnInit {
   submitPartySong(songName: string, songArtist: string) {
     const rsvp: RSVP = {
       people: this.partyMembers,
+      firstName: this.partyMembers[0].firstName,
+      lastName: this.partyMembers[0].lastName,
+      amtComing: this.partyMembers.length,
       songName: songName,
       songArtist: songArtist,
       validationCode: this.validationCode

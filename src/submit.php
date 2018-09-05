@@ -15,11 +15,14 @@
             //Create new RSVP row for this session
             $song_name = $data['songName'];
             $song_artist = $data['songArtist'];
+            $first_name = $data['firstName'];
+            $last_name = $data['lastName'];
+            $amt_coming = $data['amtComing'];
 
-            $sql = "INSERT INTO rsvp (song_name, song_artist) VALUES (?, ?)";
+            $sql = "INSERT INTO rsvp (song_name, song_artist, first_name, last_name, amt_coming) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
 
-            $stmt->execute([$song_name, $song_artist]);
+            $stmt->execute([$song_name, $song_artist, $first_name, $last_name, $amt_coming]);
             $rsvp_id = $conn->lastInsertID();
 
             $created_ids = array();
