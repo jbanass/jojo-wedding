@@ -4,7 +4,7 @@
   background: url("/assets/images/floral-background-01.jpg");
   background-attachment: fixed;
   background-size: cover;
-  height: 450px;
+  height: 600px;
 }
 
 .rsvp-copy {
@@ -273,14 +273,14 @@
 
 @media screen and (min-width: 1024px) {
   .rsvp-form-container {
-    height: -webkit-fill-available;
-    margin-top: -10px;
+    position:relative;
+    height:560px;
   }
 
   .rsvp-form {
-    position: relative;
-    transform: none;
-    top: 75px;
+    width:60%;
+    padding:50px 10% 75px;
+    top:405px;
   }
 
   .family-message h2 {
@@ -288,5 +288,9 @@
   }
 
   .family-message p {
+  }
+
+  .rsvp-header h1 {
+    font-size:3em;
   }
 }
