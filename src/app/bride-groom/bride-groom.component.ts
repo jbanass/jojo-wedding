@@ -3,26 +3,26 @@ import { trigger, state, style, animate, transition, stagger, query } from '@ang
 import { Subscription, Observable, fromEvent } from "rxjs";
 
 @Component({
-  selector: "bride-groom",
-  templateUrl: "./bride-groom.component.html",
-  styleUrls: ["./bride-groom.component.scss"]
+    selector: "bride-groom",
+    templateUrl: "./bride-groom.component.html",
+    styleUrls: ["./bride-groom.component.scss"]
 })
 export class BrideGroomComponent {
-  @ViewChild('bridegroom') brideGroom: ElementRef;
-  brideGroomInView: boolean = false;
+    @ViewChild('bridegroom') brideGroom: ElementRef;
+    brideGroomInView: boolean = false;
 
-  scrollPos: number;
-  windowHeight: number;
+    scrollPos: number;
+    windowHeight: number;
 
-  subscriptionScroll: Subscription;
+    subscriptionScroll: Subscription;
 
-  ngAfterViewInit() {
+    ngAfterViewInit() {
         this.subscriptionScroll = fromEvent(window, 'scroll').subscribe(() => this.onScroll());
-        this.scrollPos;
+        this.onScroll();
     }
 
     checkVisibility() {
-        if (this.scrollPos >= (<HTMLDivElement>this.brideGroom.nativeElement).getBoundingClientRect().top) {
+        if ((this.scrollPos + 200) >= (<HTMLDivElement>this.brideGroom.nativeElement).getBoundingClientRect().top) {
             if (!this.brideGroomInView) {
                 this.brideGroomInView = true;
             }
