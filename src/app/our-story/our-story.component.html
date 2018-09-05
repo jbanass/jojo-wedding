@@ -1,12 +1,12 @@
-<div class="section our-story-container">
+<div #ourstory [class.fadeIn]="topInView" class="section our-story-container">
     <div class="our-story-header-container">
         <h1 class="section-header our-story-header">Our Story</h1>
     </div>
-    <div #ourstory class="our-story" [ngSwitch]="storyIndex">
+    <div class="our-story" [ngSwitch]="storyIndex">
         <div *ngFor="let story of stories; let i = index">
-            <div *ngSwitchCase="i">
+            <div [class.fadeIn]="topInView" *ngSwitchCase="i">
                 <div class="our-story-subsection-header">
-                    <h2>{{story.title}}</h2>
+                    <h2 class="our-story-subsection-title">{{story.title}}</h2>
                     <h2 class="our-story-subsection-date">{{story.date}}</h2>
                 </div>
                 <div class="our-story-subsection-description" *ngFor="let description of story.descriptions">

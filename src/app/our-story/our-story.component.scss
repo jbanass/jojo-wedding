@@ -58,12 +58,13 @@
   padding-bottom: 20px;
 }
 
-.our-story-subsection-header h2 {
-  font-size: .9em;
+.our-story-subsection-header .our-story-subsection-title {
+  font-size: 1em;
   font-family: $all-caps-font-stack;
 }
 
 .our-story-subsection-date {
+  font-size:.7em;
 }
 
 .our-story-subsection-description {
@@ -72,6 +73,21 @@
   font-style: $copy-font-style;
   line-height: 1.2em;
   text-align: left;
+}
+
+@keyframes fadeIn { 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.fadeIn {
+animation: fadeIn 1.5s ease-in-out;
+animation-fill-mode: both;
 }
 
 @media screen and (min-width: 768px) {

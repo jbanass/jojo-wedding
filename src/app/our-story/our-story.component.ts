@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
+import { Subscription, Observable, fromEvent } from "rxjs";
+
 
 @Component({
     selector: 'our-story',
@@ -9,9 +11,34 @@ export class OurStoryComponent {
     storyIndex: number = 0;
 
     @ViewChild('ourstory') top: ElementRef;
+    topInView: boolean = false;
+
+    scrollPos: number;
+    windowHeight: number;
+
+    subscriptionScroll: Subscription;
 
     constructor(private ref: ChangeDetectorRef) {
 
+    }
+
+    ngAfterViewInit() {
+        this.subscriptionScroll = fromEvent(window, 'scroll').subscribe(() => this.onScroll());
+        this.onScroll();
+    }
+
+    checkVisibility() {
+        if ((this.scrollPos + 200) >= (<HTMLDivElement>this.top.nativeElement).getBoundingClientRect().top) {
+            if (!this.topInView) {
+                this.topInView = true;
+            }
+        }
+    }
+
+    onScroll() {
+        this.scrollPos = window.scrollY;
+        this.windowHeight = window.innerHeight;
+        this.checkVisibility();
     }
 
     stories: Array<Story> = [
