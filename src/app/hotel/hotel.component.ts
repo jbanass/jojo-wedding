@@ -9,7 +9,7 @@ import { Subscription, fromEvent } from 'rxjs';
     styleUrls: ['./hotel.component.scss']
 })
 export class HotelComponent implements OnInit {
-    private hotel: Hotel
+    public hotel: Hotel
 
     constructor(private service: HotelService) {
 

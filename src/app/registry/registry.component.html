@@ -11,11 +11,11 @@
             </p>
             <div class="registry-info">
                 <div #registry class="registry-options-container">
-                    <div [class.slideInRight]="registryElementIsInView" class="square-container target" (click)="openRegistry(registry[0].reg_url)">
-                        <img class="target" src="/assets/images/target-logo (1).png" />
+                    <div [class.slideInRight]="registryElementIsInView" class="square-container target">
+                        <img (click)="openRegistry(0)" class="target" src="/assets/images/target-logo (1).png" />
                     </div>
-                    <div [class.slideInRight]="registryElementIsInView" class="square-container bbb" (click)="openRegistry(registry[1].reg_url)">
-                        <img class="bbb" src="/assets/images/bed-bath-logo (1).png" />
+                    <div [class.slideInRight]="registryElementIsInView" class="square-container bbb">
+                        <img (click)="openRegistry(1)" class="bbb" src="/assets/images/bed-bath-logo (1).png" />
                     </div>
                 </div>
             </div>

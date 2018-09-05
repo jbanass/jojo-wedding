@@ -109,6 +109,13 @@ export class RSVPFormComponent implements OnInit {
   finalizeParty() {
     this.partySubmitted = true;
 
+    if (this.personForm.dirty) {
+      //save whatever we have
+      this.currentPerson.firstName = this.personForm.get('firstName').value;
+      this.currentPerson.lastName = this.personForm.get('lastName').value;
+      //this.
+    }
+
     if (!this.canShowSongChoice()) {
       const rsvp: RSVP = {
         people: this.partyMembers,

@@ -5,6 +5,7 @@
   background-attachment: fixed;
   background-size: cover;
   height: 600px;
+  z-index:1;
 }
 
 .rsvp-copy {
@@ -28,6 +29,7 @@
   flex-direction: column;
   text-align: center;
   place-content: center;
+  z-index:2;
 }
 
 .modal-content {
@@ -217,7 +219,7 @@
   font-family: $all-caps-font-stack;
 }
 
-.signature h1 {
+.signature {
   font-family: WildernessTypeFace;
   font-size: 1.5em;
 }
@@ -255,6 +257,7 @@
 
   .family-message {
     padding-top: 200px;
+    padding: 215px 15% 45px;
   }
   
   .family-message h2 {
@@ -271,10 +274,13 @@
   }
 }
 
+
+
 @media screen and (min-width: 1024px) {
   .rsvp-form-container {
     position:relative;
     height:560px;
+    top:-10px;
   }
 
   .rsvp-form {
@@ -284,7 +290,7 @@
   }
 
   .family-message h2 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   .family-message p {
@@ -293,4 +299,20 @@
   .rsvp-header h1 {
     font-size:3em;
   }
+}
+
+@keyframes fadeIn { 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.fadeIn {
+animation: fadeIn 1s ease-in-out;
+animation-fill-mode: both;
+z-index:0;
 }

@@ -8,7 +8,7 @@ import { RegistryService, Registry } from './registry.service';
     styleUrls: ['./registry.component.scss']
 })
 export class RegistryComponent implements OnInit {
-    private registry: Array<Registry>;
+    private registry: Array<Registry> = new Array<Registry>();
 
     constructor(private service: RegistryService) {
 
@@ -43,11 +43,13 @@ export class RegistryComponent implements OnInit {
 
     ngOnInit() {
         this.service.getRegistryInformation().subscribe((registry: Array<Registry>) => {
-            this.registry = registry;
+            this.registry[0] = registry[0];
+            this.registry[1] = registry[1];
         })
     }
 
-    openRegistry(url: string) {
-        window.open(url, "_blank");
+    openRegistry(index: number) {
+        console.log(this.registry);
+        window.open(this.registry[index].reg_url, "_blank");
     }
 }

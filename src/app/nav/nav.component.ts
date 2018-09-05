@@ -7,9 +7,9 @@ import { Router } from "@angular/router";
   styleUrls: ["./nav.component.scss"]
 })
 export class NavComponent {
-  private isClosed: boolean = true;
+  public isClosed: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   toggleNavDrawer() {
     this.isClosed = !this.isClosed;
