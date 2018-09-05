@@ -7,7 +7,7 @@
             <div *ngSwitchCase="i">
                 <div class="our-story-subsection-header">
                     <h2>{{story.title}}</h2>
-                    <h2 class="our-story-subsection-date">- {{story.date}} -</h2>
+                    <h2 class="our-story-subsection-date">{{story.date}}</h2>
                 </div>
                 <div class="our-story-subsection-description" *ngFor="let description of story.descriptions">
                     <p>{{description}}</p>

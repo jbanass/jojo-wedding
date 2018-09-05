@@ -15,7 +15,7 @@
   background-size: cover;
   background-attachment: fixed;
   height: auto;
-  padding-bottom: 40px;
+  padding:45px;
   text-align: center;
 }
 
@@ -30,7 +30,8 @@
 }
 
 .hotel-copy {
-  font-size:.8em;
+  font-size:.6em;
+  line-height: 1.3em;
 }
 
 .hotel-header-container {
@@ -38,8 +39,22 @@
 
 .hotel-header {
   text-align: center;
-  padding: 50px 0 0 0;
   color: $off-white;
+}
+
+@keyframes fadeIn { 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.fadeIn {
+animation: fadeIn 1s ease-in-out;
+animation-fill-mode: both;
 }
 
 .hotel-description-container {
@@ -56,10 +71,6 @@
   margin: 10px;
   font-size: 0.7em;
   line-height: 1.1em;
-}
-
-.hotel-info-container {
-  padding: 5px;
 }
 
 .hotel-info {
@@ -119,13 +130,17 @@ animation-delay: 2.5s
     transform: none;
     padding-bottom:none;
   }
-
-  .hotel-description p {
-    font-size: .8em;
+  
+  .hotel-container {
+    padding: 30px 15% 60px;
   }
 
   .hotel-info {
-    padding: 30px 0;
+    padding-top: 20px;
+  }
+
+  .hotel-description p {
+    font-size: .8em;
   }
 
   .half-hr {
@@ -137,14 +152,14 @@ animation-delay: 2.5s
   }
 }
 
-@media screen and (min-width: 768px) {
-  .hotel-container {
-    padding: 0 60px;
-  }
-}
-
 @media screen and (min-width: 1024) {
   .hotel-info{
     padding-bottom: 75px;
 }
+}
+
+@media screen and (min-width: 1280px) {
+  .hotel-container {
+    padding: 50px 15% 75px;
+  }
 }

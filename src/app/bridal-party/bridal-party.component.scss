@@ -11,7 +11,7 @@
 .bridal-party-container {
   background-color: $main-blue;
   height: auto;
-  padding-bottom: 40px;
+  padding: 45px 0;
 }
 
 .bridal-party-header-container {
@@ -19,9 +19,9 @@
 
 .bridal-party-header {
   text-align: center;
-  padding: 50px 0px;
   width: 100vw;
   color: $light-blue;
+  padding-bottom: 30px;
 }
 
 .bridesmaids-list-container {
@@ -47,7 +47,7 @@
 .bridesmaid-container h2,
 .groomsmen-container h2 {
   font-family: $all-caps-font-stack;
-  font-size: 0.9em;
+  font-size: 0.8em;
   letter-spacing: $all-caps-letter-spacing;
   line-height: .8em;
 }
@@ -70,7 +70,7 @@
 
 @media screen and (min-width: 768px) {
   .bridal-party-container {
-    padding-bottom: 65px;
+    padding: 55px 0 60px;
   }
   .bridesmaids-list-container,
   .groomsmen-list-container {
@@ -102,21 +102,23 @@
 @keyframes slideIn { 
     0% {
       opacity: 0;
-      transform: translateX(-100%);
+      transform: translateX(0);
     }
 
-    100% {
-      transform: translateX(0);
+    50% {
+      transform: translateX(100%);
       opacity: 1
     }
-}
+  }
 
 .slideIn {
   animation: slideIn 1s ease-in-out;
   animation-fill-mode: both;
 }
 
-.bridesmaid-list .bridesmaid-container.slideIn:nth-child(1),
+
+
+/*.bridesmaid-list .bridesmaid-container.slideIn:nth-child(1),
 .groomsmen-list .groomsmen-container.slideIn:nth-child(1) { 
   animation-delay: .5s
  }
@@ -165,8 +167,13 @@
 .groomsmen-list .groomsmen-container.slideIn:nth-child(10) { 
   animation-delay: 5s
  }
+ */
 
 @media screen and (min-width: 1024px) {
+  .bridal-party-container {
+    padding: 0 0 60px;
+  }
+
   .bridesmaid-container h2,
   .groomsmen-container h2 {
     font-family: $all-caps-font-stack;
@@ -180,5 +187,11 @@
     font-family: $copy-font-stack;
     font-style: $copy-font-style;
     letter-spacing: 0.05em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .bridal-party-container {
+    padding: 50px 0 75px;
   }
 }

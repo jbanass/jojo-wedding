@@ -9,7 +9,7 @@
 
 .our-story-header {
   text-align: center;
-  padding: 50px 0px;
+  padding: 45px 0px;
 }
 
 .our-story {
@@ -50,7 +50,7 @@
 }
 
 .story-button-selected {
-  background-color: $main-red !important;
+  background-color: $light-red !important;
   border: none;
 }
 
@@ -82,6 +82,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .our-story-container {
+    padding: 0 0 60px;
+  }
+
   .our-story-subsection-header h2 {
     font-size: 1em;
   }
@@ -89,5 +93,11 @@
   .story-button {
     height: 15px;
     width: 15px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .our-story-container {
+    padding: 75px 10%;
   }
 }

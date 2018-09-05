@@ -3,15 +3,20 @@
 .bride-groom-container {
   background-color: $main-blue;
   height: auto;
-  padding-bottom: 40px;
+  padding: 45px 0;
+}
+
+.bride-groom-subheader {
+  color: $light-blue;
+  font-family: $all-caps-font-stack; 
+  font-size: .7em;
+  text-align: center;
 }
 
 .bride-groom-header {
   text-align: center;
-  padding: 30px 3px 50px 3px;
-  width: 100vw;
   color: $light-blue;
-  animation-delay: 5s;
+  padding-bottom: 30px;
 }
 
 .square-container {
@@ -27,11 +32,12 @@
 .couple-description {
   background-color: $main-red;
   height: auto;
-  padding: 25px 30px 35px 30px;
+  padding: 40px 10% 45px;
 }
 
 .couple-description h2 {
   color: $light-red;
+  font-size: 2em;
 }
 
 .couple-description hr {
@@ -88,10 +94,13 @@
     text-align: left;
     width: 50%;
   }
+  .bride-groom-subheader {
+    font-size: 1em;
+  }
 
   .couple-container {
     margin: 0 auto;
-    width: 80vw;
+    padding: 60px 10%;
     text-align: center;
   }
 
@@ -137,17 +146,57 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .couple-container{
-    width: 70vw;
-  }
-
   .couple-description {
     padding: 25px 50px 35px 50px;
   }
 
   .bride-groom-container {
-    padding-bottom: 75px;
+    padding-bottom: 60px 0;
   }
+}
+
+@media screen and (min-width: 1280px) {
+  .couple-container {
+    padding: 75px 20%;
+  }
+
+  .bride-groom-container {
+    padding: 75px 0;
+  }
+
+  .bride-groom-header {
+    font-size: 6em;
+  }
+}
+
+@keyframes slideInUp { 
+        0%   { 
+          opacity: 0;
+          transform: translateY(0); 
+        }
+
+        50%  { 
+          
+          transform: translateY(-50px);
+        }
+
+        100% { 
+          opacity: 1;
+          transform: translateY(0); 
+        }
+}
+
+.slideInUp {
+animation: slideInUp 1s ease-in-out;
+animation-fill-mode: both;
+}
+
+.bride-groom-subheader.slideInUp {
+  animation-delay: 3s;
+}
+
+.bride-groom-header.slideInUp {
+  animation-delay: 4s;
 }
 
 

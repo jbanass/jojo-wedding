@@ -2,11 +2,11 @@
 
 .square-container {
   width: 87.5%;
+  height:  450px;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: $main-red;
-  padding: 3px 5px 20px 5px;
   text-align: center;
   top: -65px;
 }
@@ -14,7 +14,7 @@
 .festivities-subheader {
   font-family: $all-caps-font-stack;
   letter-spacing: $all-caps-letter-spacing;
-  font-size: 0.85em;
+  font-size: 0.8em;
 }
 
 .festivities-copy {
@@ -32,7 +32,6 @@
 
 .festivities-container {
   height: auto;
-  padding-bottom: 40px;
 }
 
 .festivities-header {
@@ -77,28 +76,25 @@ animation-delay: .5s
 @media screen and (min-width: 768px) {
   .festivities-container {
     background-color: #3d3d3d;
-    padding: 40px;
     background-image: url("/assets/images/festivities-background.jpg");
     background-size: cover;
     height: 675px;
+    padding: 60px 10%;
     text-align: -webkit-center;
   }
 
   .festivities-square-container {
     position: absolute;
-    left: 200px;
     max-width: fit-content;
   }
 
   .square-container {
     width: 480px;
-    height: 535px;
-    margin: 25px 30px 25px -130px;
+    height: 540px;
     position: inherit;
     -webkit-transform: none;
     transform: none;
     background-color: $main-red;
-    padding: 3px;
     text-align: center;
     top: 0;
   }
@@ -119,7 +115,7 @@ animation-delay: .5s
 @media screen and (min-width: 1320px) {
   .festivities-container {
     background-color: #3d3d3d;
-    padding: 40px;
+    padding: 40px 20%;
     background-image: url("/assets/images/festivities-background.jpg");
     background-size: cover;
     background-attachment: fixed;

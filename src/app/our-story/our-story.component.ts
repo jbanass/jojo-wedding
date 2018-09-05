@@ -35,7 +35,7 @@ export class OurStoryComponent {
         },
         {
             title: "North and South",
-            date: "2010 - 2014",
+            date: "2010-2014",
             descriptions: [
                 "Jordan and Joseph graduated from Lincoln-Way East, and went to college. Never quite getting the timing just right",
                 "Joseph to DePaul University in Chicago",
