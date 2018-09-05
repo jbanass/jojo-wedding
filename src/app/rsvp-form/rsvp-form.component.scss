@@ -199,6 +199,7 @@
   color: $light-blue;
   font-size: 0.7em;
   line-height: 1.3em;
+  letter-spacing: $all-caps-letter-spacing;
 }
 
 .family-message p {
@@ -290,7 +291,7 @@
   }
 
   .family-message h2 {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 
   .family-message p {

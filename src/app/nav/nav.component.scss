@@ -11,7 +11,7 @@
 .nav-container,
 .mobile-nav-container {
   font-family: $all-caps-font-stack;
-  letter-spacing: 0.03em;
+  letter-spacing: $all-caps-letter-spacing;
 }
 
 .mobile-nav-menu {
