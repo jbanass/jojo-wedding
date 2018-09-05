@@ -20,10 +20,9 @@
 }
 
 .square-container {
-  width: 87.5%;
+  width: 75%;
   position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
+  margin: 0 auto;
 }
 
 .couple-container {
@@ -199,4 +198,34 @@ animation-fill-mode: both;
   animation-delay: 2s;
 }
 
+@keyframes slideInLeft { 
+  0%   { 
+    opacity: 0;
+    transform: translateX(-50%); 
+  }
 
+  100% { 
+    opacity: 1;
+  }
+}
+
+.slideInLeft {
+  animation: slideInLeft 2s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.bride-container .square-container.couple-picture.slideInLeft {
+  animation-delay: 3s;
+}
+
+.bride-container .square-container.couple-description.slideInLeft {
+  animation-delay: 3.5s;
+}
+
+.groom-container .square-container.couple-picture.slideInLeft {
+  animation-delay: 4.5s;
+}
+
+.groom-container .square-container.couple-description.slideInLeft {
+  animation-delay: 5s;
+}
