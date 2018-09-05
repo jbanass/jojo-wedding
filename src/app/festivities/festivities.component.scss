@@ -73,6 +73,10 @@ animation-fill-mode: both;
 animation-delay: .5s
 }
 
+.festivities-square-container .slideIn .slideIn{ 
+  animation-delay: 1s
+  }
+
 @media screen and (min-width: 768px) {
   .festivities-container {
     background-color: #3d3d3d;

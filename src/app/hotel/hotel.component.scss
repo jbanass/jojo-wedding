@@ -78,7 +78,7 @@ animation-fill-mode: both;
 
 .half-hr {
   width: 50%;
-  margin: 0 auto;
+  margin: 10px auto;
   border-color: $light-red;
 }
 
@@ -132,7 +132,7 @@ animation-delay: 2.5s
   }
   
   .hotel-container {
-    padding: 30px 15% 60px;
+    padding: 30px 0 60px;
   }
 
   .hotel-info {
@@ -141,6 +141,7 @@ animation-delay: 2.5s
 
   .hotel-description p {
     font-size: .8em;
+    padding: 0 10%;
   }
 
   .half-hr {
@@ -149,6 +150,10 @@ animation-delay: 2.5s
     height: 150px;
     position: relative;
     top: 35px;
+  }
+
+  .hotel-button {
+    margin-top:40px;
   }
 }
 
@@ -161,5 +166,9 @@ animation-delay: 2.5s
 @media screen and (min-width: 1280px) {
   .hotel-container {
     padding: 50px 15% 75px;
+  }
+
+  .half-hr {
+    margin: 0 30px;
   }
 }
