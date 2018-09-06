@@ -25,7 +25,7 @@
 .hero-subheader {
   font-family: $all-caps-font-stack;
   font-size:.5em;
-  letter-spacing: .05em;
+  letter-spacing: .08em;
   opacity: .6;
 }
 
@@ -71,10 +71,10 @@ animation-fill-mode: both;
 
 @media screen and (min-width: 1440px) {
   .hero-header {
-    font-size:12em;
+    font-size:10em;
   }
 
   .hero-subheader {
-    font-size:1.4em;
+    font-size:1.1em;
   }
 }
