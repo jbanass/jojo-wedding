@@ -4,7 +4,7 @@
   height: auto;
   background: url("/assets/images/floral-background-03.jpg");
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .our-story-header {
@@ -96,6 +96,10 @@ animation-fill-mode: both;
 @media screen and (min-width: 768px) {
   .our-story-subsection-description {
     font-size: .8em;
+  }
+
+  .our-story-container {
+    background-attachment: fixed;
   }
 }
 
