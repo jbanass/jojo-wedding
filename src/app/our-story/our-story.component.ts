@@ -65,16 +65,16 @@ export class OurStoryComponent {
             ]
         },
         {
-            title: "I Like Your Wit",
+            title: "I Like Her Wit",
             date: "February 2015",
             descriptions: [
-                'Soon before Jordan graduated, they decided to have lunch at Chili\'s in their hometown for a quick get-together to catch up. They haven\'t seen each other in years and never would have though this meeting could be anything more than two friends having lunch. They touched on many subjects, ranging from how college was, to work, to Joseph\'s most fascinating topic, Isaac Asimov\'s "Three Laws of Robotics" (you know, typical conversation). After spending six hours together, Joseph started to think, "I like your wit".']
+                'Soon before Jordan graduated, they decided to have lunch at Chili\'s in their hometown for a quick get-together to catch up. They haven\'t seen each other in years and never would have though this meeting could be anything more than two friends having lunch. They touched on many subjects, ranging from how college was, to work, to Joseph\'s most fascinating topic, Isaac Asimov\'s "Three Laws of Robotics" (you know, typical conversation). After spending six hours together, Joseph started to think, "I like her wit".']
         },
         {
             title: "Maybe, Just Maybe",
             date: "April 12, 2015",
             descriptions: [
-                "After the six hour lunch, Jordan and Joseph started to see more of each other. From going to see a movie, out to the bars, or staying up until three in the morning talking to each other, Jordan and Joseph continued to spend time together. Joseph began thinking that maybe, just maybe, the timing was just right. And so, on April 12, 2015, Joseph visited Jordan at the University of Illinois with flowers and her personal favorite, Reeses Peanut Butter Cups. They stood beneath the South Quad Bell Tower, and Joseph asked Jordan to be his girlfriend. Jordan said yes."
+                "After the six hour lunch, Jordan and Joseph started to see more of each other. From going to see a movie, out to the bars, or staying up until three in the morning talking to each other, Jordan and Joseph continued to spend time together. Joseph began thinking that maybe, just maybe, the timing was just right. And so, on April 12, 2015, Joseph visited Jordan at the University of Illinois with flowers and her personal favorite, Reese's Peanut Butter Cups. They stood beneath the South Quad Bell Tower, and Joseph asked Jordan to be his girlfriend. Jordan said yes."
             ]
         },
         {

@@ -28,7 +28,8 @@
               "src/food.php",
               "src/submit.php",
               "src/validator.php",
-              "src/registry.php"
+              "src/registry.php",
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.scss"
