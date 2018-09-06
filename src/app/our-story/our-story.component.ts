@@ -61,7 +61,7 @@ export class OurStoryComponent {
             title: "The Next Adventure",
             date: "2010-2014",
             descriptions: [
-                "Jordan and Joseph graduated from Lincoln-Way East and soon parted way to different colleges. Joseph attended DePaul University in Chicago while Jordan attended The University of Illinois at Urbana-Champaign. Joseph immersed himself in Computer Science, where he met some of his groomsmen. Jordan ended up meeting some of her bridesmaids (and favorite campus squirrels) while studying Graphic Design. College life distanced them, but every time they caught up with one another, it was as if a single moment has passed."
+                "Jordan and Joseph graduated from Lincoln-Way East and soon parted way to different colleges. Joseph attended DePaul University in Chicago while Jordan attended The University of Illinois at Urbana-Champaign. Joseph immersed himself in Computer Science, where he met some of his groomsmen. Jordan ended up meeting some of her bridesmaids (and favorite campus squirrels) while studying Graphic Design. College life distanced them, but every time they caught up with one another, it was as if not a single moment has passed."
             ]
         },
         {
