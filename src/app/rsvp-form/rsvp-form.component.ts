@@ -70,7 +70,7 @@ export class RSVPFormComponent implements OnInit {
           this.currentPerson.firstName +
           " " +
           this.currentPerson.lastName +
-          "'s response is waiting to be sent. Feel free to add more, or tap 'Finish RSVP' to send your responses!",
+          "'s response is waiting to be sent. Feel free to add more guests as part of your group, or tap 'Finish RSVP' to submit your responses to us!",
         callback: () => {
           this.modal = undefined;
         }
@@ -97,7 +97,7 @@ export class RSVPFormComponent implements OnInit {
         this.currentPerson.firstName +
         " " +
         this.currentPerson.lastName +
-        "'s response is waiting to be sent. Feel free to add more, or select 'Finish RSVP' to send your responses!",
+        "'s response is waiting to be sent. Feel free to add more guests as part of your group, or tap 'Finish RSVP' to submit your responses to us!",
       callback: () => {
         this.modal = undefined;
       }

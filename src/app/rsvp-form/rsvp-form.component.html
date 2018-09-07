@@ -10,6 +10,11 @@
         <div *ngIf="isValidated; else validateCode">
             <div [formGroup]="personForm">
                 <div *ngIf="!isPersonEntered() && !partySubmitted">
+                    <div *ngIf="partyMembers.length > 0">
+                        <p class="finish-reminder">If you have finished entering people in your party, please select
+                            "Finish RSVP" to submit
+                            your responses.</p>
+                    </div>
                     <input formControlName="firstName" class="rsvp-form-input" placeholder="First Name" />
                     <input formControlName="lastName" class="rsvp-form-input" placeholder="Last Name" />
 
@@ -32,7 +37,8 @@
                         <span class="rsvp-checkbox-check"></span>
                     </label>
                     <input formControlName="foodNotes" class="rsvp-form-input" placeholder="Allergy/Dietary Requests" />
-                    <button [disabled]="!personForm.get('food').valid" class="button rsvp-form-button" (click)="submitPartyMemberFoodChoice()">Continue</button>
+                    <button [disabled]="!personForm.get('food').valid" class="button rsvp-form-button" (click)="submitPartyMemberFoodChoice()">Add
+                        Guest</button>
                 </div>
                 <div *ngIf="canShowSongChoice()">
                     <p class="rsvp-copy">Before you go, what song will get you on the dance floor?</p>
@@ -64,10 +70,11 @@
     <h1 class="section-header">We are excited!</h1>
     <h2>To our family and friends</h2>
     <p>
-        Thank you to those who have given us nothing but love, support, and encouragement throughout the years. We are excited for
+        Thank you to those who have given us nothing but love, support, and encouragement throughout the years. We are
+        excited for
         our next step in our wonderful adventure together. We are blessed to have you in our lives.
     </p>
-    <hr/>
+    <hr />
     <h2 class="signature-subheader">With Love,</h2>
     <h1 class="signature">Jordan & Joseph</h1>
 </div>
@@ -77,7 +84,7 @@
             {{modal.message}}
         </p>
         <button class="button rsvp-form-button rsvp-form-button-modal" (click)="modal.callback()">
-            Tap to close
+            Tap to Continue
         </button>
     </div>
 </div>
